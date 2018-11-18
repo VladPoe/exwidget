@@ -1,6 +1,6 @@
 import userData from './../constants/userData';
 
-const RESPONSE_EMULATION_TIME = 5000;
+const RESPONSE_EMULATION_TIME = 3000;
 
 const emulateServerRequest = (howLong, response) => () => {
   return new Promise((resolve, reject) => {

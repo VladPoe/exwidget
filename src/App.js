@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { initialUpload } from './store/actions/thunks.js';
+import { initialUpload } from './store/actions/thunks';
 import RootRouter from './routes/RooRouter';
 import { withRouter } from 'react-router'
 
@@ -30,27 +30,10 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        { !this.state.isPending && <RootRouter {...this.props} />  }
+        {
+          !this.state.isPending && <RootRouter {...this.props} />
+        }
       </div>
-
-
-
-      // <div className="App">
-      //   <header className="App-header">
-      //     <img src={logo} className="App-logo" alt="logo" />
-      //     <p>
-      //       Edit <code>src/App.js</code> and save to reload.
-      //     </p>
-      //     <a
-      //       className="App-link"
-      //       href="https://reactjs.org"
-      //       target="_blank"
-      //       rel="noopener noreferrer"
-      //     >
-      //       Learn React
-      //     </a>
-      //   </header>
-      // </div>
     );
   }
 }

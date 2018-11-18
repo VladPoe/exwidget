@@ -1,0 +1,33 @@
+:root {
+  --typography-black: rgb(25, 28, 30);
+  --typography-dark: rgb(120, 126, 133);
+  --base-blue: rgb(0, 112, 237);
+  --base-rose: rgb(235, 0, 141);
+  --rose-darker: rgb(225, 0, 135);
+  --contrast-white: rgb(255, 255, 255);
+  --background-light: rgb(243, 244, 245);
+
+  --base-fontsize: 16px;
+  --base-fonts-stack: Roboto, -apple-system, Helvetica Neue, Helvetica, Segoe UI, Arial, sans-serif;
+  --title-fonts: FuturaBook, Roboto, -apple-system, Helvetica Neue, Helvetica, Segoe UI, Arial, sans-serif;
+  --code-snippet-fonts: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+
+  --content-width: 90%;
+  --content-width--md: 600px;
+  --content-width--lg: 1140px;
+  --header-height: 60px;
+}
+
+@media (min-width: 740px) {
+  :root {
+    --content-width: 680px;
+    --base-fontsize: 18px;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --content-width: 1000px;
+    --base-fontsize: 20px;
+  }
+}

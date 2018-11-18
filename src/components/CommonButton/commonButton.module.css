@@ -1,0 +1,18 @@
+.btn {
+  background-color: var(--base-rose);
+  color: var(--contrast-white);
+  transition-property: background-color;
+  min-width: 220px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  font-size: var(--base-fontsize);
+  border: none;
+  border-radius: 30px;
+  transition-duration: 150ms;
+}
+
+.btn:hover {
+  background-color: var(--rose-darker);
+}

@@ -1,14 +1,107 @@
 .page {
   width: 100%;
   height: 100vh;
+  min-height: 520px;
   background-color: white;
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
-
+  font-size: 60px;
+  color: var(--typography-black);
 }
 
 .message {
-  font-size: 28px;
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
+.title + .message {
+  margin-top: 16px;
+}
+
+.infoWrap {
+  width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 370px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+.decorWrap {
+  min-height: 150px;
+  flex-grow: 1;
+  background-color: var(--background-light);
+  position: relative;
+}
+
+.title {
+  font-family: var(--title-fonts);
+}
+
+.btnWrap {
+
+}
+
+* + .btnWrap {
+  margin-top: 28px;
+}
+
+.animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-60%) translateY(-60%);
+  animation: mTomRound linear 30s infinite;
+  width: 100px;
+  height: 100px;
+}
+
+@media (min-width: 740px) {
+  .animation {
+    width: 120px;
+    height: 120px;
+    left: 40%;
+  }
+}
+
+@media (min-width: 740px) {
+  .message {
+    font-size: 24px;
+  }
+
+  .title {
+    font-size: 68px;
+  }
+
+  .infoWrap {
+    padding-bottom: 70px;
+    padding-top: 70px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .animation {
+    width: 150px;
+    height: 150px;
+  }
+
+  .title {
+    font-size: 72px;
+  }
+}
+
+@keyframes mTomRound {
+  0% {
+    transform: translateX(-60%) translateY(-60%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-60%) translateY(-60%) rotate(360deg);
+  }
+}
