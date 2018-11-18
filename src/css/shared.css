@@ -16,6 +16,10 @@ body {
   font-weight: 400;
 }
 
+h2 {
+  font-family: FuturaBook, Roboto, -apple-system, Helvetica Neue, Helvetica, Segoe UI, Arial, sans-serif;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
   monospace;

@@ -3,7 +3,7 @@ import { fetchUserData } from "../../services/domainServerService";
 import openExchangeService from './../../services/openExchangeService';
 
 const formErrorMessage = (reason) => {
-  return `Unfortunately we see that some error occurred by the following reason: ${reason}`;
+  return ` We see that some error occurred by the following reason: ${reason}`;
 };
 
 // -----> FYI <-----

@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'), url(./../assets/fonts/Roboto.woff) format('woff');
+  src: local('Roboto'), url(./../assets/fonts/Roboto.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'FuturaBook';
+  src: local('FuturaBook'), url(./../assets/fonts/FuturaBook.woff) format('woff');
+  src: local('FuturaBook'), url(./../assets/fonts/FuturaBook.woff2) format('woff2');
+}
