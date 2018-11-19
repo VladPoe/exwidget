@@ -1,17 +1,32 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import { Switch, Route, Redirect } from 'react-router';
-import ROUTES from './../constants/routes';
+import { Switch, Route } from 'react-router';
 import ErrorScreen from './../components/ErrorScreen/ErrorScreen.js';
 
+const NOT_FOUND_MSG = 'Page not found';
+const reloadPage = () => {
+  window.location.reload();
+};
+const redirectHome = (historyReference) => () => {
+  historyReference.push('/');
+};
+
 const RootRouter = (props) => {
+  console.log(props);
   return (
     <Switch>
       {
         !props.doesAppWorks
-          ? <Route render={() => <ErrorScreen message={props.errorMessage} /> } />
+          ? <Route render={ () => <ErrorScreen message={props.errorMessage}
+                                               buttonText="Reload"
+                                               buttonClickHandler={reloadPage} />
+          } />
           : (
-            <Route />
+            <Route render={ () => <ErrorScreen message={NOT_FOUND_MSG}
+                                               buttonText="Home"
+                                               buttonClickHandler={redirectHome(props.history)}
+            />
+            }/>
           )
       }
     </Switch>
