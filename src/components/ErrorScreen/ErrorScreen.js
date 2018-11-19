@@ -4,9 +4,7 @@ import styles from './errorScreen.module.css';
 import CommonButton from './../CommonButton/CommonButton';
 import MajorTom from "../MajorTom/MajorTom";
 
-const reloadPage = () => {
-  window.location.reload();
-};
+
 
 const ErrorScreen = (props) => {
   return (
@@ -18,9 +16,9 @@ const ErrorScreen = (props) => {
           { props.message }
         </p>
         <div className={styles.btnWrap}>
-          <CommonButton text={'Reload'}
+          <CommonButton text={props.buttonText}
                         type={'button'}
-                        clickHandler={reloadPage}
+                        clickHandler={props.buttonClickHandler}
           />
         </div>
       </div>
@@ -34,7 +32,9 @@ const ErrorScreen = (props) => {
 };
 
 ErrorScreen.propTypes = {
-  message: PropTypes.string
+  message: PropTypes.string,
+  buttonText: PropTypes.string,
+  buttonClickHandler: PropTypes.func
 };
 
 ErrorScreen.defaultProps = {

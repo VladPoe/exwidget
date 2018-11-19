@@ -35,7 +35,7 @@
 }
 
 .decorWrap {
-  min-height: 150px;
+  min-height: 200px;
   flex-grow: 1;
   background-color: var(--background-light);
   position: relative;
@@ -63,15 +63,14 @@
   height: 100px;
 }
 
+
 @media (min-width: 740px) {
   .animation {
     width: 120px;
     height: 120px;
     left: 40%;
   }
-}
 
-@media (min-width: 740px) {
   .message {
     font-size: 24px;
   }
@@ -83,6 +82,14 @@
   .infoWrap {
     padding-bottom: 70px;
     padding-top: 70px;
+  }
+
+  .title + .message {
+    margin-top: 20px;
+  }
+
+  * + .btn-wrap {
+    margin-top: 34px;
   }
 }
 
