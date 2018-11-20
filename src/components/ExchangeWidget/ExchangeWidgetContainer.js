@@ -6,13 +6,6 @@ import { getRatesBasedOn, convertFromTo } from './../../utils/conversion';
 import {decimal, divide} from "../../utils/decimal";
 
 
-const foo = () => {
-  console.log(convertFromTo(1)(2));
-
-};
-
-
-
 const mapStateToProps = (state) => {
   return {
 
@@ -38,9 +31,7 @@ class ExchangeWidgetContainer extends Component {
   }
 
   render() {
-
-    foo();
-
+    
     return (
       <ExchangeWidget />
     );
