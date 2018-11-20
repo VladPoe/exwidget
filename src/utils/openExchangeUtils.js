@@ -1,4 +1,4 @@
-import { OEX } from "../services/openExchangeService";
+import { OEX } from '../services/openExchangeService';
 
 
 const didRequestSucceed = (status) => status >= 200 && status < 300;
@@ -18,6 +18,13 @@ export const createUrl = (endpoint) => {
     ;
 };
 
+export const createUrlWrongKey = (endpoint) => {
+  return OEX.BASE_URL
+    + endpoint
+    + `?app_id=${OEX.FAKE_KEY}`
+    ;
+};
+
 export const withQueryParams = (createUrlFoo) => (endpoint) => (paramsObj) => {
   return Object.entries(paramsObj).reduce((acc, [key, val]) => {
     return acc + `&${key}=${val}`;
@@ -28,9 +35,4 @@ export const getOExData = (url) => {
   return fetch(url)
     .then(checkStatus)
     .then(getJson)
-    // .then(data => data)
-    // .catch(err => {
-    //   const msg = `Sorry, we could not get the actual data. Request ended with following error: ${err}`;
-    //   console.log(msg);
-    // });
 };

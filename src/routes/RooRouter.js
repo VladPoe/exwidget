@@ -2,6 +2,9 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import { Switch, Route } from 'react-router';
 import ErrorScreen from './../components/ErrorScreen/ErrorScreen.js';
+import ROUTES from './../constants/routes';
+import ExchangeWidgetContainer from './../components/ExchangeWidget/ExchangeWidgetContainer';
+
 
 const NOT_FOUND_MSG = 'Page not found';
 const reloadPage = () => {
@@ -12,25 +15,23 @@ const redirectHome = (historyReference) => () => {
 };
 
 const RootRouter = (props) => {
-  console.log(props);
   return (
-    <Switch>
-      {
-        !props.doesAppWorks
-          ? <Route render={ () => <ErrorScreen message={props.errorMessage}
-                                               buttonText="Reload"
-                                               buttonClickHandler={reloadPage} />
+    !props.doesAppWorks
+      ? <Route render={ () => <ErrorScreen message={props.errorMessage}
+                                           buttonText="Reload"
+                                           buttonClickHandler={reloadPage} />
+      } />
+      : (
+        <Switch>
+          <Route path={ROUTES.INDEX} exact render={ () => <ExchangeWidgetContainer /> } />
+
+          <Route render={ () => <ErrorScreen message={NOT_FOUND_MSG}
+                                             buttonText="Home"
+                                             buttonClickHandler={redirectHome(props.history)}/>
           } />
-          : (
-            <Route render={ () => <ErrorScreen message={NOT_FOUND_MSG}
-                                               buttonText="Home"
-                                               buttonClickHandler={redirectHome(props.history)}
-            />
-            }/>
-          )
-      }
-    </Switch>
-  );
+        </Switch>
+      )
+    );
 };
 
 RootRouter.propTypes = {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { initialUpload } from './store/actions/thunks';
 import RootRouter from './routes/RooRouter';
-import { withRouter } from 'react-router'
+import { withRouter } from 'react-router';
 
 const disableBeforeAppPreloader = () => {
   const preloader = document.getElementById('before-app-preloader');

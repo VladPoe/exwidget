@@ -9,9 +9,11 @@ const setRates = createAction('SET_RATES', ({ base, rates, timestamp }) => {
     timestamp
   }
 });
+const setCurrentBaseCurrency = createAction('SET_CURRENT_BASE_CURRENCY', currCode => currCode);
 
 export default {
   setCrucialError,
   setUserData,
-  setRates
+  setRates,
+  setCurrentBaseCurrency
 }
