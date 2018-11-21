@@ -4,7 +4,7 @@ import rootReducer from "./reducers";
 import thunk from 'redux-thunk';
 
 
-const store = createStore(
+export const store = createStore(
     rootReducer,
     composeWithDevTools(applyMiddleware(
         thunk

@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ExchangeWidget from './ExchangeWidget';
 import { updateRates } from './../../store/actions/thunks';
-
+import { getRatesInBaseCurrency } from './selectors';
 
 const mapStateToProps = (state) => {
   return {
-
+    rates: getRatesInBaseCurrency(state)
   };
 };
 
@@ -17,7 +17,7 @@ const mapDispatchToProps = {
 class ExchangeWidgetContainer extends Component {
   interval = null;
   state = {
-    updateInterval: 800000
+    updateInterval: 3000000
   };
 
   componentDidMount() {
@@ -29,7 +29,7 @@ class ExchangeWidgetContainer extends Component {
   }
 
   render() {
-
+    console.log('update props ', this.props.rates);
     return (
       <ExchangeWidget />
     );
