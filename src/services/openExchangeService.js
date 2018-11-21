@@ -20,6 +20,7 @@ const getBasicRates = () => {
   };
   const url = withQueryParams(createUrl)(endpoint)(params);
   console.log('url requested = ', url);
+  // return getBasicRatesWithError();  // to trigger API error
   return getOExData(url);
 };
 

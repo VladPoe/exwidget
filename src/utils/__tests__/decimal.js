@@ -8,13 +8,13 @@ it('decimals', () => {
 
   expect(
     divide(decimal(4.426))(2)
-  ).toEqual('2.21');
+  ).toEqual('2.2130');
 
   expect(
     divide(decimal(34.996733))(2)
-  ).toEqual('17.50');
+  ).toEqual('17.4984');
 
   expect(
     divide(decimal(354.876733))(3.8)
-  ).toEqual('93.39');
+  ).toEqual('93.3886');
 });

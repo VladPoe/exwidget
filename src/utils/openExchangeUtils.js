@@ -6,7 +6,7 @@ const didRequestSucceed = (status) => status >= 200 && status < 300;
 const checkStatus = (response) => {
   return didRequestSucceed(response.status)
     ? Promise.resolve(response)
-    : Promise.reject(response.statusText)
+    : Promise.reject(`API response: ${response.statusText}`)
 };
 
 const getJson = (response) =>  response.json();

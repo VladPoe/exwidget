@@ -19,9 +19,11 @@ export const combRates = (newBase, rates) => {
   }, {});
 };
 
-export const getRatesBasedOn = (newBase, precBaseRates) => {
+export const getRatesBasedOn = (newBase, prevBaseRates) => {
+  const { base, rates, ...rest } = prevBaseRates;
   return {
     base: newBase,
-    rates: combRates(newBase, precBaseRates)
+    rates: combRates(newBase, rates),
+    ...rest
   }
 };

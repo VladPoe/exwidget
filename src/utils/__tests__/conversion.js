@@ -3,35 +3,35 @@ import { convertFromTo, combRates } from "./../conversion";
 it('convertFromTo test', () => {
   expect(
     convertFromTo(1)(0.8327)
-  ).toEqual('1.20');
+  ).toEqual('1.2009');
 
   expect(
     convertFromTo(1)(0.8324)
-  ).toEqual('1.20');
+  ).toEqual('1.2013');
 
   expect(
     convertFromTo(1)(2.543)
-  ).toEqual('0.39');
+  ).toEqual('0.3932');
 
   expect(
     convertFromTo(0.7347)(0.8924)
-  ).toEqual('0.82');
+  ).toEqual('0.8233');
 
   expect(
     convertFromTo(1)(0.87)
-  ).toEqual('1.15');
+  ).toEqual('1.1494');
 
   expect(
     convertFromTo(1)(0.78)
-  ).toEqual('1.28');
+  ).toEqual('1.2821');
 
   expect(
     convertFromTo(0.87)(0.78)
-  ).toEqual('1.12');
+  ).toEqual('1.1154');
 
   expect(
     convertFromTo(0.78)(0.87)
-  ).toEqual('0.90');
+  ).toEqual('0.8966');
 });
 
 
@@ -50,20 +50,20 @@ it('combRates test', () => {
     KZT: 416.17
   };
   expect(combRates('EUR', USD_BASED_RATES)).toEqual({
-    USD: '1.14',
-    EUR: '1.00',
-    GBP: '0.89'
+    USD: '1.1364',
+    EUR: '1.0000',
+    GBP: '0.8864'
   });
   expect(combRates('GBP', USD_BASED_RATES)).toEqual({
-    USD: '1.28',
-    EUR: '1.13',
-    GBP: '1.00'
+    USD: '1.2821',
+    EUR: '1.1282',
+    GBP: '1.0000'
   });
   expect(combRates('UAH', EUR_BASED_RATES_WITH_EXTRA_CURR)).toEqual({
-    EUR: '0.03',
-    USD: '0.04',
-    GBP: '0.03',
-    UAH: '1.00',
-    KZT: '13.33'
+    EUR: '0.0320',
+    USD: '0.0365',
+    GBP: '0.0285',
+    UAH: '1.0000',
+    KZT: '13.3260'
   });
 });

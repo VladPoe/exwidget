@@ -1,6 +1,6 @@
 import Big from 'big.js';
 
-export const FIX_AFTER_POINT = 2;
+export const FIX_AFTER_POINT = 4;
 
 export const decimal = (val) => Big(val);
 
