@@ -1,4 +1,3 @@
-// import currencies from './../constants/currencies';
 import {
   decimal,
   add,

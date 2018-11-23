@@ -1,8 +1,10 @@
 import actions from './index.js'
-import { fetchUserData } from "../../services/domainServerService";
+import { fetchUserData } from '../../services/domainServerService';
 import openExchangeService from './../../services/openExchangeService';
 import { store } from './../index';
 import areDeeplyEqual from './../../utils/areDeeplyEqual';
+import { getToCurrency } from './../../utils/currencies';
+
 
 const formErrorMessage = (reason) => {
   return ` We see that some error occurred because of the following reason:\n${reason}`;
@@ -17,6 +19,8 @@ export const initialUpload = (cb = () => null) => {
       .then(([ userData, { base, rates, timestamp } ]) => {
         dispatch(actions.setUserData(userData));
         dispatch(actions.setRates({ base, rates, timestamp }));
+        dispatch(actions.setExchangeFromCurrency(userData.mainCurrency));
+        dispatch(actions.setExchangeToCurrency(getToCurrency(userData.mainCurrency, userData.account)));
         cb();
       })
       .catch(err => {
