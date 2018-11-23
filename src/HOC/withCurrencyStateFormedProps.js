@@ -1,24 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import actions from './../store/actions';
+import { currentBaseCurrency } from "../store/reducers/currentBaseCurrency";
 
 const mapStateToProps = (state) => {
   return {
-    rates: state.rates,
-    exchange: state.exchange
+
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    changeInputSum: (value) => dispatch(actions.setExchangeSum(value)),
-    changeFromCurrency: (currency) => dispatch(actions.setExchangeFromCurrency(currency)),
-    changeToCurrency: (currency) => dispatch(actions.setExchangeToCurrency(currency))
-  }
+  // return {
+  //   changeInputSum: (value) => dispatch(actions.setExchangeSum(value)),
+  //   changeFromCurrency: (currency) => dispatch(actions.setExchangeFromCurrency(currency)),
+  //   changeToCurrency: (currency) => dispatch(actions.setExchangeToCurrency(currency))
+  // }
 };
 
 export default (WrappedComponent, type) => {
-  class ExchangeDataPropsProxy extends Component {
+  class CurrencyStatePropsDispatcher extends Component {
+
+    componentDidMount() {
+      if (!this.props.exchange.fromCurrency) {
+        this.props.changeFromCurrency(this.props.currentBaseCurrency);
+      }
+    }
 
     render() {
       console.log('from PP - ', this.props);
@@ -34,5 +40,5 @@ export default (WrappedComponent, type) => {
     }
   }
 
-  return connect(mapStateToProps, mapDispatchToProps)(ExchangeDataPropsProxy)
+  return connect(mapStateToProps, mapDispatchToProps)(CurrencyStatePropsDispatcher)
 };

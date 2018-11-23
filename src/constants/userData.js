@@ -4,7 +4,7 @@ import { decimal } from '../utils/decimal'
 export default {
   name: 'Vlad',
   surname: 'Pocheptcov',
-  baseCurrency: currencies.USD.code,
+  mainCurrency: currencies.USD.code,
   account: {
     EUR: {
       symbol: currencies.EUR.code,

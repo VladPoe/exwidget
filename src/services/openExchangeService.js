@@ -15,7 +15,7 @@ export const ENDPOINTS = {
 const getBasicRates = () => {
   const endpoint = ENDPOINTS.LATEST;
   const params = {
-    'base': userData.baseCurrency,
+    'base': userData.mainCurrency,
     'symbols': `${currencies.EUR.code},${currencies.USD.code},${currencies.GBP.code}`
   };
   const url = withQueryParams(createUrl)(endpoint)(params);

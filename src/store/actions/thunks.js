@@ -16,7 +16,6 @@ export const initialUpload = (cb = () => null) => {
     Promise.all([fetchUserData(), openExchangeService.getBasicRates()])
       .then(([ userData, { base, rates, timestamp } ]) => {
         dispatch(actions.setUserData(userData));
-        dispatch(actions.setCurrentBaseCurrency(userData.baseCurrency));
         dispatch(actions.setRates({ base, rates, timestamp }));
         cb();
       })

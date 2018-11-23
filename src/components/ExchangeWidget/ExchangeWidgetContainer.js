@@ -2,13 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ExchangeWidget from './ExchangeWidget';
 import { updateRates } from './../../store/actions/thunks';
-import { getRatesInBaseCurrency } from './../../selectors/selectors';
 
 
 const mapStateToProps = (state) => {
-  return {
-    rates: getRatesInBaseCurrency(state)
-  };
+  return {};
 };
 
 const mapDispatchToProps = {
