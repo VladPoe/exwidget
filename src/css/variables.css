@@ -11,6 +11,7 @@
   --base-fonts-stack: Roboto, -apple-system, Helvetica Neue, Helvetica, Segoe UI, Arial, sans-serif;
   --title-fonts: FuturaBook, Roboto, -apple-system, Helvetica Neue, Helvetica, Segoe UI, Arial, sans-serif;
   --code-snippet-fonts: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  --bolder-text: Robotobolder, -apple-system, Helvetica Neue, Helvetica, Segoe UI, Arial, sans-serif;
 
   --content-width: 90%;
   --content-width--md: 600px;

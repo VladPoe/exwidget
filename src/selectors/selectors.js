@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { getRatesBasedOn } from "./../../utils/conversion";
+import { getRatesBasedOn } from "../utils/conversion";
 
 const getRates = (state) => state.rates;
 const getBaseCurrency = (state) => state.currentBaseCurrency;

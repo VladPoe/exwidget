@@ -9,3 +9,9 @@
   src: local('FuturaBook'), url(./../assets/fonts/FuturaBook.woff) format('woff');
   src: local('FuturaBook'), url(./../assets/fonts/FuturaBook.woff2) format('woff2');
 }
+
+@font-face {
+  font-family: 'Robotobolder';
+  src: local('Robotobolder'), url(./../assets/fonts/Roboto.woff) format('woff');
+  src: local('Robotobolder'), url(./../assets/fonts/Roboto.woff2) format('woff2');
+}

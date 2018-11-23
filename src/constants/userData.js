@@ -4,18 +4,18 @@ import { decimal } from '../utils/decimal'
 export default {
   name: 'Vlad',
   surname: 'Pocheptcov',
-  baseCurrency: currencies.usd.code,
+  baseCurrency: currencies.USD.code,
   account: {
-    eur: {
-      symbol: currencies.eur.code,
+    EUR: {
+      symbol: currencies.EUR.code,
       amount: decimal(2100)
     },
-    usd: {
-      symbol: currencies.usd.code,
+    USD: {
+      symbol: currencies.USD.code,
       amount: decimal(4623.05)
     },
-    gbp: {
-      symbol: currencies.gbp.code,
+    GBP: {
+      symbol: currencies.GBP.code,
       amount: decimal(4319.49)
     }
   }

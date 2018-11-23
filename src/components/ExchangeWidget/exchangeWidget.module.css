@@ -1,0 +1,102 @@
+.exchangeWidget {
+  --content-width: 90%;
+  --pointer-line-depth: 15px;
+  background-color: var(--base-blue);
+  color: var(--contrast-white);
+  background-image: url('./subtlePrism.svg');
+  background-blend-mode: soft-light;
+  background-size: cover;
+}
+
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.partConvertFrom {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  /*position: absolute;*/
+  /*width: 100%;*/
+  /*top: 0;*/
+  /*left: 0;*/
+  min-height: calc(50vh + var(--pointer-line-depth));
+  flex-shrink: 0;
+}
+
+.partConvertTo {
+  --bg-overlay-color: rgba(0, 0, 0, 0.3);
+  background-color: var(--bg-overlay-color);
+  padding-top: 15px;
+  padding-bottom: 30px;
+  /*position: absolute;*/
+  /*width: 100%;*/
+  /*left: 0;*/
+  /*bottom: 0;*/
+  min-height: calc(50vh - var(--pointer-line-depth));
+  flex-shrink: 0;
+  position: relative;
+}
+
+.partConvertTo::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: var(--pointer-line-depth);
+  width: calc(50% + 5px);
+  background-color: var(--bg-overlay-color);
+  transform: translateY(-100%) translateX(-12px) skewX(45deg);
+}
+
+.partConvertTo::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: var(--pointer-line-depth);
+  width: calc(50% + 5px);
+  background-color: var(--bg-overlay-color);
+  transform: translateY(-100%) translateX(12px) skewX(-45deg);
+}
+
+.container {
+  width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.currencyStateElem {
+
+}
+
+.heading {
+  font-family: var(--bolder-text);
+  font-weight: 500;
+  display: block;
+  font-size: 25px;
+}
+
+.label {
+  font-size: 12px;
+  display: block;
+}
+
+* + .label {
+  margin-top: 7px;
+}
+
+.labelRight {
+  text-align: right;
+}
+
+.label .small {
+  font-size: 80%;
+}
+

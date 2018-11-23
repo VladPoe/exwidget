@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ExchangeWidget from './ExchangeWidget';
 import { updateRates } from './../../store/actions/thunks';
-import { getRatesInBaseCurrency } from './selectors';
+import { getRatesInBaseCurrency } from './../../selectors/selectors';
+
 
 const mapStateToProps = (state) => {
   return {
@@ -17,10 +18,11 @@ const mapDispatchToProps = {
 class ExchangeWidgetContainer extends Component {
   interval = null;
   state = {
-    updateInterval: 3000000
+    updateInterval: 3000000,
   };
 
   componentDidMount() {
+    this.props.updateRates();
     this.interval = setInterval(() => this.props.updateRates(), this.state.updateInterval);
   };
 

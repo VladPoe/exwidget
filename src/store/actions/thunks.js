@@ -14,10 +14,10 @@ const formErrorMessage = (reason) => {
 export const initialUpload = (cb = () => null) => {
   return (dispatch) => {
     Promise.all([fetchUserData(), openExchangeService.getBasicRates()])
-      .then(([ userData, exRates ]) => {
+      .then(([ userData, { base, rates, timestamp } ]) => {
         dispatch(actions.setUserData(userData));
         dispatch(actions.setCurrentBaseCurrency(userData.baseCurrency));
-        dispatch(actions.setRates(exRates));
+        dispatch(actions.setRates({ base, rates, timestamp }));
         cb();
       })
       .catch(err => {
@@ -34,7 +34,6 @@ export const updateRates = () => {
       .then(({ base, rates, timestamp }) => {
         const prevRates = store.getState().rates;
         const newRates = { base, rates, timestamp };
-        console.log(areDeeplyEqual(prevRates, newRates));
         if (areDeeplyEqual(prevRates, newRates)) return;
         dispatch(actions.setRates(newRates));
       })

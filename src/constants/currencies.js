@@ -1,5 +1,5 @@
 export default {
-  eur: {
+  EUR: {
     shortName: 'eur',
     fullName: 'Euro',
     code: 'EUR',
@@ -7,7 +7,7 @@ export default {
     symbol: '€',
     htmlCode: '&euro;'
   },
-  usd: {
+  USD: {
     shortName: 'usd',
     fullName: 'US Dollar',
     code: 'USD',
@@ -15,7 +15,7 @@ export default {
     symbol: '$',
     htmlCode: '&#36;'
   },
-  gbp: {
+  GBP: {
     shortName: 'gbp',
     fullName: 'Pound Sterling',
     code: 'GBP',
