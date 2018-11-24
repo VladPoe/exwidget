@@ -1,11 +1,14 @@
 import React from 'react';
 import styles from './exchangeWidget.module.css';
-import CurrencyState from '../CurrencyState/CurrencyState';
+import CurrencyState from './CurrencyState';
+import ExchangeSum from './ExchangeSum';
 import { IncomeSum } from "./utils";
-import withExchangeData from './../../HOC/withExchangeData';
+import CurrencyStatePropsProxy from './../../HOC/CurrencyStatePropsPropxy';
+import ExchangeSumPropsProxy from './../../HOC/ExchangeSumPropsProxy';
 
-const FromCurrencyState = withExchangeData(CurrencyState, 'from');
-const ToCurrencyState = withExchangeData(CurrencyState, 'to');
+const FromCurrencyState = CurrencyStatePropsProxy(CurrencyState, 'from');
+const ToCurrencyState = CurrencyStatePropsProxy(CurrencyState, 'to');
+const ExchangeSumWithProps = ExchangeSumPropsProxy(ExchangeSum);
 
 const ExchangeWidget = (props) => {
   return (
@@ -16,18 +19,15 @@ const ExchangeWidget = (props) => {
           <div className={styles.container}>
             <div className={styles.form}>
               <FromCurrencyState />
-              {/*<CurrencyState currency="EUR"*/}
-                             {/*balance="24.32"*/}
-              {/*/>*/}
+              <ExchangeSum />
+              {/*<ExchangeSumWithProps />*/}
             </div>
           </div>
         </div>
         <div className={styles.partConvertTo}>
           <div className={styles.container}>
             <div className={styles.form}>
-              <CurrencyState currency="USD"
-                             balance="467.43"
-              />
+              <ToCurrencyState />
               <IncomeSum fromCurrency="GBP"
                          toCurrency="EUR"
                          rate="0.74"

@@ -3,7 +3,7 @@
   --pointer-line-depth: 15px;
   background-color: var(--base-blue);
   color: var(--contrast-white);
-  background-image: url('./subtlePrism.svg');
+  background-image: url('./../../assets/icons/subtlePrism.svg');
   background-blend-mode: soft-light;
   background-size: cover;
 }
@@ -12,6 +12,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .partConvertFrom {
@@ -81,11 +82,13 @@
   font-weight: 500;
   display: block;
   font-size: 25px;
+  line-height: 1;
 }
 
 .label {
   font-size: 12px;
   display: block;
+  font-family: var(--base-fonts-stack);
 }
 
 * + .label {
@@ -98,5 +101,56 @@
 
 .label .small {
   font-size: 80%;
+}
+
+.sumInputWrap {
+  position: relative;
+}
+
+.sumInputWrap:after {
+  content: attr(data-value);
+  /*border-bottom: 1px solid var(--contrast-white);*/
+  display: inline-block;
+  min-width: 20px;
+  position: relative;
+  right: 0;
+  height: 100%;
+  font-size: inherit;
+  line-height: 1;
+  color: transparent;
+  z-index: 0;
+}
+
+.sumInput {
+  border: none;
+  background-color: transparent;
+  width: 200px;
+  color: inherit;
+  text-align: right;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: 1;
+  position: absolute;
+  top: -2px;
+  right: 0;
+  z-index: 1;
+}
+
+.sumInput:focus {
+  outline: none;
+}
+
+.inputTip {
+  position: absolute;
+  width: 100px;
+  right: 0;
+  text-align: right;
+  bottom: 3px;
+  transition-property: opacity;
+  transition-duration: 200ms;
+}
+
+.inputTip.off {
+  opacity: 0;
 }
 

@@ -9,7 +9,7 @@ export const exchange = handleActions({
     return { ...state, toCurrency: currCode }
   },
   [actions.setExchangeSum]: (state, { payload: value }) => {
-    return { ...state, value }
+    return { ...state, sum: value }
   }
 }, {
   fromCurrency: '',

@@ -28,7 +28,6 @@ class ExchangeWidgetContainer extends Component {
   }
 
   render() {
-    console.log('update props ', this.props.rates);
     return (
       <ExchangeWidget />
     );
