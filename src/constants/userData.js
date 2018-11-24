@@ -1,5 +1,4 @@
 import currencies from './currencies';
-import { decimal } from '../utils/decimal'
 
 export default {
   name: 'Vlad',
@@ -8,15 +7,15 @@ export default {
   account: {
     EUR: {
       symbol: currencies.EUR.code,
-      amount: decimal(2100)
+      amount: '2100'
     },
     USD: {
       symbol: currencies.USD.code,
-      amount: decimal(4623.05)
+      amount: '4623.05'
     },
     GBP: {
       symbol: currencies.GBP.code,
-      amount: decimal(4319.49)
+      amount: '4319.49'
     }
   }
 };

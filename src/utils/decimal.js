@@ -12,6 +12,10 @@ export const divide = (decimal) => (divider) => decimal.div(divider).toFixed(FIX
 
 export const multiply = (decimal) => (times) => decimal.times(times).toFixed(FIX_AFTER_POINT);
 
-export const isEqual = (decimal) => (val) => decimal.eq(val).toFixed(FIX_AFTER_POINT);
+export const isEqual = (decimal) => (val) => decimal.eq(val);
 
-export const decimalToString = (decimal) => decimal.toString().toFixed(FIX_AFTER_POINT);
+export const isGreater = (decimal) => (val) => decimal.gt(val);
+
+export const isLessOrEqual = (decimal) => (val) => decimal.lte(val);
+
+export const decimalToString = (decimal) => decimal.toFixed(FIX_AFTER_POINT);

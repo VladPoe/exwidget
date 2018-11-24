@@ -4,11 +4,9 @@ import CurrencyState from './CurrencyState';
 import ExchangeSum from './ExchangeSum';
 import { IncomeSum } from "./utils";
 import CurrencyStatePropsProxy from './../../HOC/CurrencyStatePropsPropxy';
-import ExchangeSumPropsProxy from './../../HOC/ExchangeSumPropsProxy';
 
 const FromCurrencyState = CurrencyStatePropsProxy(CurrencyState, 'from');
 const ToCurrencyState = CurrencyStatePropsProxy(CurrencyState, 'to');
-const ExchangeSumWithProps = ExchangeSumPropsProxy(ExchangeSum);
 
 const ExchangeWidget = (props) => {
   return (
@@ -20,7 +18,6 @@ const ExchangeWidget = (props) => {
             <div className={styles.form}>
               <FromCurrencyState />
               <ExchangeSum />
-              {/*<ExchangeSumWithProps />*/}
             </div>
           </div>
         </div>

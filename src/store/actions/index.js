@@ -7,6 +7,7 @@ const setUserCurrency = createAction('SET_USER_CURRENCY', currCode => currCode);
 const setExchangeFromCurrency = createAction('SET_EXCHANGE_FROM_CURRENCY', currCode => currCode);
 const setExchangeToCurrency = createAction('SET_EXCHANGE_TO_CURRENCY', currCode => currCode);
 const setExchangeSum = createAction('SET_EXCHANGE_SUM', value => value);
+const setIsExchangeSumAvailable = createAction('IS_EXCHANGE_SUM_AVAILABLE', value => value);
 
 export default {
   setCrucialError,
@@ -15,5 +16,6 @@ export default {
 	setUserCurrency,
   setExchangeFromCurrency,
   setExchangeToCurrency,
-  setExchangeSum
+  setExchangeSum,
+  setIsExchangeSumAvailable
 }

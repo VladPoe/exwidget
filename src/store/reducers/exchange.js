@@ -10,9 +10,13 @@ export const exchange = handleActions({
   },
   [actions.setExchangeSum]: (state, { payload: value }) => {
     return { ...state, sum: value }
+  },
+  [actions.setIsExchangeSumAvailable]: (state, { payload: bool }) => {
+    return { ...state, isAvailable: bool }
   }
 }, {
   fromCurrency: '',
   toCurrency: '',
-  sum: ''
+  sum: '',
+  isSumAvailable: true
 });

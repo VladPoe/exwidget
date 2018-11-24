@@ -109,7 +109,6 @@
 
 .sumInputWrap:after {
   content: attr(data-value);
-  /*border-bottom: 1px solid var(--contrast-white);*/
   display: inline-block;
   min-width: 20px;
   position: relative;
@@ -119,6 +118,7 @@
   line-height: 1;
   color: transparent;
   z-index: 0;
+  pointer-events: none;
 }
 
 .sumInput {
@@ -146,11 +146,13 @@
   right: 0;
   text-align: right;
   bottom: 3px;
+  opacity: 0;
   transition-property: opacity;
-  transition-duration: 200ms;
+  transition-duration: 250ms;
+  z-index: 1;
 }
 
-.inputTip.off {
-  opacity: 0;
+.inputTip.on {
+  opacity: 1;
 }
 

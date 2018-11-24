@@ -2,22 +2,30 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import sharedStyles from './exchangeWidget.module.css';
-import { getExchangeSum } from './../../selectors';
+import { getExchangeSum, getMaxSumAvailable, getExchangeSumAvailability } from './../../selectors';
 import actions from './../../store/actions';
 import { sumRegexp } from './../../utils/currencies';
+import { decimal, isLessOrEqual } from './../../utils/decimal';
+import cn from 'classnames';
 
-var inputId='sum';
+const inputId='sum';
+
+const isAvailable = (sumString, maxSumString) => {
+  return isLessOrEqual(decimal(sumString || 0))(maxSumString)
+};
 
 const mapStateToProps = (state) => {
   return {
-    exchangeSum: getExchangeSum(state)
+    exchangeSum: getExchangeSum(state),
+    max: getMaxSumAvailable(state),
+    isAvailable: getExchangeSumAvailability(state)
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleSumChange: ({ target: { value } }) => {
-      sumRegexp.test(value) && dispatch(actions.setExchangeSum(value))
+    dispatchSum: (value) => {
+      dispatch(actions.setExchangeSum(value))
     }
   }
 };
@@ -29,7 +37,22 @@ class ExchangeSum extends Component {
     this.inputRef.current.focus();
   }
 
+  handleSumChange = ({ target: { value } }) => {
+    sumRegexp.test(value) && this.props.dispatchSum(value);
+  };
+
   render() {
+    const labelClassNames = cn({
+      [sharedStyles.label]: true,
+      [sharedStyles.inputTip]: true,
+      [sharedStyles.on]: !this.props.exchangeSum || (this.props.exchangeSum && !this.props.isAvailable)
+    });
+
+    const labelText = !this.props.exchangeSum
+      ? 'type the sum'
+      : !this.props.isAvailable
+        ? 'overbalance' : '';
+
     return (
       <div className={`${sharedStyles.sumInputWrap} ${sharedStyles.heading}`}
            data-value={this.props.exchangeSum}
@@ -40,15 +63,13 @@ class ExchangeSum extends Component {
                id={inputId}
                value={this.props.exchangeSum}
                name="exchange-sum"
-               onChange={this.props.handleSumChange}
+               onChange={this.handleSumChange}
                ref={this.inputRef}
         />
         <label htmlFor={inputId}
-               className={`${sharedStyles.label}
-                           ${sharedStyles.inputTip}
-                           ${this.props.exchangeSum && sharedStyles.off}`}
+               className={labelClassNames}
         >
-          type the sum
+          { labelText }
         </label>
       </div>
     );
