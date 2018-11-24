@@ -4,11 +4,23 @@ import CurrencyState from './CurrencyState';
 import ExchangeSum from './ExchangeSum';
 import { IncomeSum } from "./utils";
 import CurrencyStatePropsProxy from './../../HOC/CurrencyStatePropsPropxy';
+import ExchangeResult from './ExchangeResult';
+
+import { Sum } from './../../utils/decimal';
+
 
 const FromCurrencyState = CurrencyStatePropsProxy(CurrencyState, 'from');
 const ToCurrencyState = CurrencyStatePropsProxy(CurrencyState, 'to');
 
-const ExchangeWidget = (props) => {
+
+
+const ExchangeWidget = () => {
+  const x = new Sum(2, 'EUR');
+  x.add(13);
+  console.log(x.amount, x.currency);
+  x.convertTo('USD', 2, 1);
+  console.log(x.amount, x.currency);
+
   return (
     <article className={styles.exchangeWidget}>
       <h1 className="visuallyhidden">Ex Widget</h1>
@@ -25,11 +37,7 @@ const ExchangeWidget = (props) => {
           <div className={styles.container}>
             <div className={styles.form}>
               <ToCurrencyState />
-              <IncomeSum fromCurrency="GBP"
-                         toCurrency="EUR"
-                         rate="0.74"
-                         amount="67.34"
-              />
+              <ExchangeResult />
             </div>
           </div>
         </div>

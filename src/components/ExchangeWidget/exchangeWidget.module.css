@@ -18,10 +18,6 @@
 .partConvertFrom {
   padding-top: 30px;
   padding-bottom: 30px;
-  /*position: absolute;*/
-  /*width: 100%;*/
-  /*top: 0;*/
-  /*left: 0;*/
   min-height: calc(50vh + var(--pointer-line-depth));
   flex-shrink: 0;
 }
@@ -31,10 +27,6 @@
   background-color: var(--bg-overlay-color);
   padding-top: 15px;
   padding-bottom: 30px;
-  /*position: absolute;*/
-  /*width: 100%;*/
-  /*left: 0;*/
-  /*bottom: 0;*/
   min-height: calc(50vh - var(--pointer-line-depth));
   flex-shrink: 0;
   position: relative;
@@ -154,5 +146,9 @@
 
 .inputTip.on {
   opacity: 1;
+}
+
+.exchangeResult {
+  text-align: right;
 }
 

@@ -5,14 +5,9 @@ import sharedStyles from './exchangeWidget.module.css';
 import { getExchangeSum, getMaxSumAvailable, getExchangeSumAvailability } from './../../selectors';
 import actions from './../../store/actions';
 import { sumRegexp } from './../../utils/currencies';
-import { decimal, isLessOrEqual } from './../../utils/decimal';
 import cn from 'classnames';
 
 const inputId='sum';
-
-const isAvailable = (sumString, maxSumString) => {
-  return isLessOrEqual(decimal(sumString || 0))(maxSumString)
-};
 
 const mapStateToProps = (state) => {
   return {
