@@ -16,6 +16,10 @@ export default {
     GBP: {
       symbol: currencies.GBP.code,
       amount: '4319.49'
+    },
+    JPY: {
+      symbol: currencies.JPY.code,
+      amount: '35123.48'
     }
   }
 };

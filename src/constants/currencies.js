@@ -22,5 +22,13 @@ export default {
     number: 826,
     symbol: '£',
     htmlCode: '&pound;'
+  },
+  JPY: {
+    shortName: 'jpy',
+    fullName: 'Japanese Yen',
+    code: 'JPY',
+    number: 392,
+    symbol: '¥',
+    htmlCode: '&yen;'
   }
 }

@@ -16,7 +16,8 @@ const getBasicRates = () => {
   const endpoint = ENDPOINTS.LATEST;
   const params = {
     'base': userData.mainCurrency,
-    'symbols': `${currencies.EUR.code},${currencies.USD.code},${currencies.GBP.code}`
+    'symbols': Object.values(currencies).map(({ code }) => code).join(',')
+    // 'symbols': `${currencies.EUR.code},${currencies.USD.code},${currencies.GBP.code},${currencies}`
   };
   const url = withQueryParams(createUrl)(endpoint)(params);
   console.log('url requested = ', url);
