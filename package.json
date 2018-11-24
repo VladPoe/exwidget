@@ -5,6 +5,7 @@
   "dependencies": {
     "big.js": "^5.2.2",
     "classnames": "^2.2.6",
+    "lodash": "^4.17.11",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",

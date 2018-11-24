@@ -1,6 +1,8 @@
 .exchangeWidget {
   --content-width: 90%;
   --pointer-line-depth: 15px;
+  --head-height: 40px;
+  --bg-overlay-color: rgba(0, 0, 0, 0.3);
   background-color: var(--base-blue);
   color: var(--contrast-white);
   background-image: url('./../../assets/icons/subtlePrism.svg');
@@ -16,18 +18,22 @@
 }
 
 .partConvertFrom {
-  padding-top: 30px;
+  padding-top: 16px;
   padding-bottom: 30px;
-  min-height: calc(50vh + var(--pointer-line-depth));
+  min-height: calc(48vh - var(--head-height) / 2 + var(--pointer-line-depth));
   flex-shrink: 0;
+  position: relative;
+}
+
+.partConvertFrom .navWrap {
+  bottom: 30px;
 }
 
 .partConvertTo {
-  --bg-overlay-color: rgba(0, 0, 0, 0.3);
   background-color: var(--bg-overlay-color);
-  padding-top: 15px;
+  padding-top: 22px;
   padding-bottom: 30px;
-  min-height: calc(50vh - var(--pointer-line-depth));
+  min-height: calc(52vh - var(--head-height) / 2 - var(--pointer-line-depth));
   flex-shrink: 0;
   position: relative;
 }
@@ -77,10 +83,15 @@
   line-height: 1;
 }
 
+.heading.off {
+  opacity: 0;
+}
+
 .label {
   font-size: 12px;
   display: block;
   font-family: var(--base-fonts-stack);
+  letter-spacing: 0.2px;
 }
 
 * + .label {
@@ -152,3 +163,189 @@
   text-align: right;
 }
 
+.navWrap {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header {
+  height: var(--head-height);
+  text-align: right;
+}
+
+.exchangeBtn {
+  background-color: transparent;
+  color: var(--contrast-white);
+  border-radius: 3px;
+  border: 1px solid currentColor;
+  padding: 5px 6px;
+  font-size: 12px;
+  margin-top: 5px;
+  opacity: 1;
+  margin-right: -6px;
+  background-image: linear-gradient(to right, var(--bg-overlay-color) 0%, var(--bg-overlay-color) 85%, rgba(0,0,0,0));
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  transition-property: opacity, background-size;
+  transition-duration: 250ms, 350ms;
+}
+
+.exchangeBtn:not([disabled]):hover {
+  background-size: 120% 100%;
+}
+
+.exchangeBtn:focus {
+  box-shadow: 0 2px 2px 1px rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+
+.exchangeBtn[disabled] {
+  opacity: 0.6;
+}
+
+@media (min-width: 740px) {
+  .exchangeWidget {
+    --content-width: 80%;
+    --pointer-line-depth: 15px;
+    --head-height: 50px;
+    position: relative;
+  }
+
+  .heading {
+    font-size: 32px;
+  }
+
+  .label {
+    font-size: 16px;
+  }
+
+  * + .label {
+    margin-top: 12px;
+  }
+
+  .exchangeBtn {
+    padding: 8px 14px;
+    font-size: 16px;
+    margin-top: 12px;
+    margin-right: -14px;
+  }
+
+  .partConvertFrom .navWrap {
+    bottom: 35px;
+  }
+
+  .navWrap {
+    bottom: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .exchangeWidget {
+    --content-width: 460px;
+    --pointer-line-depth: 22px;
+  }
+
+  .wrap {
+    flex-direction: row;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .partConvertFrom, .partConvertTo {
+    min-height: 100vh;
+    width: 50%;
+    padding-top: 120px;
+    padding-bottom: 50px;
+  }
+
+  .partConvertTo::before {
+    width: var(--pointer-line-depth);
+    height: calc(50% + 5px);
+    top: 0;
+    left: 0;
+    right: auto;
+    bottom: auto;
+    transform: translateX(-100%) translateY(-18px) skewY(49deg);
+  }
+
+  .partConvertTo::after {
+    width: var(--pointer-line-depth);
+    height: calc(50% + 5px);
+    top: auto;
+    left: 0;
+    right: auto;
+    bottom: 0;
+    transform: translateX(-100%) translateY(18px) skewY(-49deg);
+  }
+
+  .heading {
+    font-size: 38px;
+  }
+
+  .label {
+    font-size: 20px;
+  }
+
+  .form {
+    flex-direction: column;
+  }
+
+  .sumInput {
+    text-align: left;
+    width: 100%;
+    position: static;
+  }
+
+  .inputTip {
+    left: 0;
+    text-align: left;
+    width: 100%;
+    position: static;
+  }
+
+  .sumInputWrap, .exchangeResult {
+    margin-top: 24vh;
+  }
+
+  .sumInputWrap .sign {
+    position: absolute;
+    left: -45px;
+  }
+
+  .sumInputWrap::after {
+    content: '';
+    display: none;
+  }
+
+  .exchangeResult {
+    text-align: left;
+    position: relative;
+  }
+
+  .exchangeResult .sign {
+    position: absolute;
+    left: -32px;
+  }
+
+  .header {
+    position: absolute;
+    width: 50%;
+    text-align: left;
+    z-index: 2;
+  }
+
+  .exchangeBtn {
+    font-size: 18px;
+    padding: 8px 18px;
+    margin-right: 0;
+    margin-left: -18px;
+    margin-top: 16px;
+  }
+
+  .navWrap {
+    bottom: 35px;
+  }
+}

@@ -1,5 +1,4 @@
 import { createSelector } from 'reselect';
-import { getRatesBasedOn } from "../utils/conversion";
 import { decimal, isLessOrEqual } from './../utils/decimal';
 
 // const getRates = (state) => state.rates;

@@ -52,7 +52,7 @@ class ExchangeSum extends Component {
       <div className={`${sharedStyles.sumInputWrap} ${sharedStyles.heading}`}
            data-value={this.props.exchangeSum}
       >
-        { this.props.exchangeSum && '— ' }
+        { this.props.exchangeSum && <span className={sharedStyles.sign}>— </span> }
         <input className={sharedStyles.sumInput}
                type="text"
                id={inputId}

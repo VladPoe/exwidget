@@ -1,0 +1,55 @@
+.elem {
+
+}
+
+.list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+
+}
+
+.item + .item {
+  margin-left: 8px;
+}
+
+.btn {
+  border-radius: 50%;
+  background-color: transparent;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  opacity: 0.5;
+  transition-property: opacity;
+  transition-duration: 250ms;
+  box-sizing: border-box;
+  border: none;
+  position: relative;
+}
+
+.btn:before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: var(--contrast-white);
+}
+
+.btn.active {
+  opacity: 1;
+}
+
+@media (min-width: 740px) {
+  .btn {
+    width: 14px;
+    height: 14px;
+  }
+}

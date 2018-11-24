@@ -5,6 +5,7 @@ import sharedStyles from './exchangeWidget.module.css';
 import { getExchangeSum, getFromCurrency, getToCurrency, getRates } from './../../selectors';
 import currencies from './../../constants/currencies';
 import { convertGivenSumFromTo } from './../../utils/conversion';
+import cn from 'classnames';
 
 const getRatesHtml = (fromCurr, toCurr, rate) => {
   return {
@@ -32,10 +33,14 @@ const ExchangeResult = (props) => {
   const rateForUnit = convertGivenSumFromTo(1)(rates[toCurrency])(rates[fromCurrency])
     .toFixed(2)
   ;
+  const headingClasses = cn({
+    [sharedStyles.heading]: true,
+    [sharedStyles.off]: !exchangeSum
+  });
 
   return (
     <div className={sharedStyles.exchangeResult}>
-      <span className={sharedStyles.heading}>{ sum }</span>
+      <span className={headingClasses}><span className={sharedStyles.sign}>+ </span>{ sum }</span>
       <small className={sharedStyles.label}
              dangerouslySetInnerHTML={getRatesHtml(fromCurrency, toCurrency, rateForUnit)}
       />
