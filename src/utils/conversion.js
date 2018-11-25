@@ -17,12 +17,3 @@ export const combRates = (newBase, rates) => {
     return { ...acc, [curr]: convertFromTo(rate)(rates[newBase]) }
   }, {});
 };
-
-export const getRatesBasedOn = (newBase, prevBaseRates) => {
-  const { base, rates, ...rest } = prevBaseRates;
-  return {
-    base: newBase,
-    rates: combRates(newBase, rates),
-    ...rest
-  }
-};

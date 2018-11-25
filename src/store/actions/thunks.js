@@ -5,7 +5,7 @@ import { store } from './../index';
 import areDeeplyEqual from './../../utils/areDeeplyEqual';
 import { getToCurrency } from './../../utils/currencies';
 import { emulateAccountUpdateServerRequest } from './../../services/domainServerService';
-import { countNewBalance } from './../../components/ExchangeWidget/utils';
+import { countNewBalance } from './../../utils/countNewBalance';
 import {convertGivenSumFromTo} from "../../utils/conversion";
 
 
@@ -14,8 +14,8 @@ export const formErrorMessage = (reason) => {
 };
 
 // -----> FYI <-----
-// to trigger uncomment line 23  in ../services/OpenExchangeService.js
-// or uncomment line 7 in ../services/domainServerService.js
+// to trigger error uncomment line 6 in ../services/domainServerService.js
+
 export const initialUpload = (cb = () => null) => {
   return (dispatch) => {
     Promise.all([fetchUserData(), openExchangeService.getBasicRates()])

@@ -17,11 +17,9 @@ const getBasicRates = () => {
   const params = {
     'base': userData.mainCurrency,
     'symbols': Object.values(currencies).map(({ code }) => code).join(',')
-    // 'symbols': `${currencies.EUR.code},${currencies.USD.code},${currencies.GBP.code},${currencies}`
   };
   const url = withQueryParams(createUrl)(endpoint)(params);
   console.log('url requested = ', url);
-  // return getBasicRatesWithError();  // to trigger API error
   return getOExData(url);
 };
 

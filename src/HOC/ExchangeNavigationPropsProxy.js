@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {getExchangeSum, getFromCurrency, getToCurrency, getUserBalance} from '../selectors';
+import { getFromCurrency, getToCurrency, getUserBalance} from '../selectors';
 import actions from "../store/actions";
 import { getToCurrency as getNextToCurrency } from "./../utils/currencies";
 
