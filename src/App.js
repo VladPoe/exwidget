@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { initialUpload } from './store/actions/thunks';
 import RootRouter from './routes/RooRouter';
 import { withRouter } from 'react-router';
+import { getAppWorkStatus, getAppErrorMessage } from './selectors';
+import Preloader from "./components/Preloader/Preloader";
 
 const disableBeforeAppPreloader = () => {
   const preloader = document.getElementById('before-app-preloader');
@@ -13,8 +15,8 @@ const disableBeforeAppPreloader = () => {
 };
 
 const mapStateToProps = (state) => ({
-  doesAppWorks: state.appStatus.works,
-  errorMessage: state.appStatus.errorMessage
+  doesAppWorks: getAppWorkStatus(state),
+  errorMessage: getAppErrorMessage(state),
 });
 
 const mapDispatchToProps = {
@@ -41,6 +43,7 @@ class App extends Component {
         {
           !this.state.isPending && <RootRouter {...this.props} />
         }
+        <Preloader />
       </div>
     );
   }

@@ -8,7 +8,7 @@ export const decimal = (val) => Big(val);
 
 export const add = (decimal) => (val) => decimal.plus(val);
 
-export const subtract = (decimal) => (val) => decimal.minus(val).toFixed(FIX_AFTER_POINT);
+export const subtract = (decimal) => (val) => decimal.minus(val);
 
 export const divide = (decimal) => (divider) => decimal.div(divider);
 

@@ -1,15 +1,8 @@
 import { createSelector } from 'reselect';
 import { decimal, isLessOrEqual } from './../utils/decimal';
 
-// const getRates = (state) => state.rates;
-// const getBaseCurrency = (state) => state.user.mainCurrency;
-//
-// export const getRatesInBaseCurrency = createSelector(
-//   [getBaseCurrency, getRates],
-//   (baseCurrency, rates) => {
-//     return getRatesBasedOn(baseCurrency, rates);
-//   }
-// );
+export const getAppWorkStatus = (state) => state.appStatus.works;
+export const getAppErrorMessage = (state) => state.appStatus.errorMessage;
 
 export const getFromCurrency = (state) => state.exchange.fromCurrency;
 export const getToCurrency = (state) => state.exchange.toCurrency;
@@ -26,3 +19,5 @@ export const getExchangeSumAvailability = createSelector(
   }
 );
 export const getRates = (state) => state.rates.rates;
+export const getScreenPreloadingStatus = (state) => state.ui.preloaderBlock.isActive;
+export const getScreenPreloadingMessage = (state) => state.ui.preloaderBlock.message;

@@ -4,10 +4,13 @@ import openExchangeService from './../../services/openExchangeService';
 import { store } from './../index';
 import areDeeplyEqual from './../../utils/areDeeplyEqual';
 import { getToCurrency } from './../../utils/currencies';
+import { emulateAccountUpdateServerRequest } from './../../services/domainServerService';
+import { countNewBalance } from './../../components/ExchangeWidget/utils';
+import {convertGivenSumFromTo} from "../../utils/conversion";
 
 
-const formErrorMessage = (reason) => {
-  return ` We see that some error occurred because of the following reason:\n${reason}`;
+export const formErrorMessage = (reason) => {
+  return `We see that some error occurred because of the following reason:\n${reason}`;
 };
 
 // -----> FYI <-----
@@ -45,4 +48,42 @@ export const updateRates = () => {
         dispatch(actions.setCrucialError(formErrorMessage(`API response ${err}`)));
       });
   }
+};
+
+export const updateBalance = () => {
+  return (dispatch, getState) => {
+    const {
+      exchange: { fromCurrency, toCurrency, sum },
+      user: { account: currentBalance },
+      rates : { rates }
+    } = getState();
+    const newBalance = countNewBalance(
+      currentBalance,
+      fromCurrency,
+      sum,
+      toCurrency,
+      convertGivenSumFromTo(sum)(rates[toCurrency])(rates[fromCurrency]).toFixed(4)
+    );
+    const offPreloader = () => {
+      dispatch(actions.manageScreenBlocking(false));
+      dispatch(actions.setPreloaderMessage(''));
+    };
+    dispatch(actions.manageScreenBlocking(true));
+    dispatch(actions.setPreloaderMessage('Updating you account'));
+    emulateAccountUpdateServerRequest(newBalance)
+      .then(response => {
+        if (response.status === 200) {
+          dispatch(actions.updateUserBalance(response.balance));
+          dispatch(actions.setExchangeSum(''));
+          offPreloader();
+        } else {
+          throw Error(response.message);
+        }
+      })
+      .catch(err => {
+        console.log(err);
+        dispatch(actions.setCrucialError(formErrorMessage(err.message)));
+        offPreloader();
+      })
+  };
 };

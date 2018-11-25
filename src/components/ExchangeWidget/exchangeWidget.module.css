@@ -199,7 +199,7 @@
 }
 
 .exchangeBtn:focus {
-  box-shadow: 0 2px 2px 1px rgba(255, 255, 255, 0.3);
+  background-size: 120% 100%;
   outline: none;
 }
 
@@ -270,7 +270,7 @@
     left: 0;
     right: auto;
     bottom: auto;
-    transform: translateX(-100%) translateY(-18px) skewY(49deg);
+    transform: translateX(-100%) translateY(-14px) skewY(40deg);
   }
 
   .partConvertTo::after {
@@ -280,7 +280,7 @@
     left: 0;
     right: auto;
     bottom: 0;
-    transform: translateX(-100%) translateY(18px) skewY(-49deg);
+    transform: translateX(-100%) translateY(14px) skewY(-40deg);
   }
 
   .heading {
@@ -344,7 +344,7 @@
     padding: 8px 18px;
     margin-right: 0;
     margin-left: -18px;
-    margin-top: 16px;
+    margin-top: 20px;
   }
 
   .navWrap {
