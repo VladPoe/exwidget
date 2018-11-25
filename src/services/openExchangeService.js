@@ -3,7 +3,7 @@ import userData from './../constants/userData';
 import currencies from './../constants/currencies';
 
 export const OEX = {
-  KEY: 'fc779e3a532945d490a444b885f659f7',
+  KEY: '45df0613a845463591657cc7242dd4c0',
   FAKE_KEY: 'qwerty12345',
   BASE_URL: 'https://openexchangerates.org/api'
 };
@@ -19,7 +19,6 @@ const getBasicRates = () => {
     'symbols': Object.values(currencies).map(({ code }) => code).join(',')
   };
   const url = withQueryParams(createUrl)(endpoint)(params);
-  console.log('url requested = ', url);
   return getOExData(url);
 };
 

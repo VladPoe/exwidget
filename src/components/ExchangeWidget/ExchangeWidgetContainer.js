@@ -4,10 +4,6 @@ import ExchangeWidget from './ExchangeWidget';
 import { updateRates } from './../../store/actions/thunks';
 
 
-const mapStateToProps = (state) => {
-  return {};
-};
-
 const mapDispatchToProps = {
   updateRates
 };
@@ -15,7 +11,7 @@ const mapDispatchToProps = {
 class ExchangeWidgetContainer extends Component {
   interval = null;
   state = {
-    updateInterval: 3000000,
+    updateInterval: 10000,
   };
 
   componentDidMount() {
@@ -34,4 +30,4 @@ class ExchangeWidgetContainer extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ExchangeWidgetContainer);
+export default connect(null, mapDispatchToProps)(ExchangeWidgetContainer);
