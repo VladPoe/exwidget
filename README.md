@@ -1,6 +1,18 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+App provides simulations of in-time currency exchange with a given user account.
+
+
+It uses Open Exchange API ([https://openexchangerates.org](https://openexchangerates.org)) 
+to get exchange rates once per 10 seconds.
+
+Technology stack: React, Redux + several additional utility libraries (see package.json for detail).
+
+Project uses css variables so please be sure you use a modern browser ([https://caniuse.com/#search=css%20variables](https://caniuse.com/#search=css%20variables))
+
+App handles some error cases. To check them out please see '../services/domainServerService.js' or '../store/actions/thunks.js' instructions.
 
 ## Available Scripts
+
+Based on Create React App.
 
 In the project directory, you can run:
 
@@ -36,9 +48,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
