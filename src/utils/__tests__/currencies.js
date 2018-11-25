@@ -1,6 +1,8 @@
-import { sumRegexp } from "../currencies";
+import { sumRegexp, getToCurrency } from "../currencies";
+import userData from "../../constants/userData";
 
-it('cumRegexp test', () => {
+
+it('sumRegexp test', () => {
   expect(
     sumRegexp.test('hello')
   ).toEqual(false);
@@ -34,10 +36,19 @@ it('cumRegexp test', () => {
   ).toEqual(true);
 
   expect(
-    sumRegexp.test('560000987654.53')
+    sumRegexp.test('5600987654.53')
   ).toEqual(true);
 
   expect(
     sumRegexp.test('5763230987654.53')
   ).toEqual(false);
+});
+
+
+it('getToCurrency test', () => {
+  const currencies = userData.account;
+  expect(
+    getToCurrency("EUR", currencies)).toEqual("USD");
+  expect(
+    getToCurrency("JPY", currencies)).toEqual("EUR");
 });

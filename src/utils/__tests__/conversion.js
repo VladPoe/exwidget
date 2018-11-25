@@ -2,35 +2,35 @@ import { convertFromTo, combRates } from "./../conversion";
 
 it('convertFromTo test', () => {
   expect(
-    convertFromTo(1)(0.8327)
+    convertFromTo(1)(0.8327).toFixed(4)
   ).toEqual('1.2009');
 
   expect(
-    convertFromTo(1)(0.8324)
+    convertFromTo(1)(0.8324).toFixed(4)
   ).toEqual('1.2013');
 
   expect(
-    convertFromTo(1)(2.543)
+    convertFromTo(1)(2.543).toFixed(4)
   ).toEqual('0.3932');
 
   expect(
-    convertFromTo(0.7347)(0.8924)
+    convertFromTo(0.7347)(0.8924).toFixed(4)
   ).toEqual('0.8233');
 
   expect(
-    convertFromTo(1)(0.87)
+    convertFromTo(1)(0.87).toFixed(4)
   ).toEqual('1.1494');
 
   expect(
-    convertFromTo(1)(0.78)
+    convertFromTo(1)(0.78).toFixed(4)
   ).toEqual('1.2821');
 
   expect(
-    convertFromTo(0.87)(0.78)
+    convertFromTo(0.87)(0.78).toFixed(4)
   ).toEqual('1.1154');
 
   expect(
-    convertFromTo(0.78)(0.87)
+    convertFromTo(0.78)(0.87).toFixed(4)
   ).toEqual('0.8966');
 });
 

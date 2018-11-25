@@ -20,6 +20,7 @@
 .btn {
   border-radius: 50%;
   background-color: transparent;
+  cursor: pointer;
   width: 16px;
   height: 16px;
   padding: 0;

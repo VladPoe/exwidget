@@ -79,7 +79,7 @@
   font-family: var(--bolder-text);
   font-weight: 500;
   display: block;
-  font-size: 25px;
+  font-size: 20px;
   line-height: 1;
 }
 
@@ -178,6 +178,7 @@
 }
 
 .exchangeBtn {
+  cursor: pointer;
   background-color: transparent;
   color: var(--contrast-white);
   border-radius: 3px;
@@ -205,6 +206,12 @@
 
 .exchangeBtn[disabled] {
   opacity: 0.6;
+}
+
+@media (min-width: 400px) {
+  .heading {
+    font-size: 25px;
+  }
 }
 
 @media (min-width: 740px) {

@@ -14,6 +14,6 @@ export const convertGivenSumFromTo = (sum) => (fromVal) => (toVal) => {
 
 export const combRates = (newBase, rates) => {
   return Object.entries(rates).reduce((acc, [ curr, rate ]) => {
-    return { ...acc, [curr]: convertFromTo(rate)(rates[newBase]) }
+    return { ...acc, [curr]: convertFromTo(rate)(rates[newBase]).toFixed(4) }
   }, {});
 };

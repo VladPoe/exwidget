@@ -5,4 +5,4 @@ export const getToCurrency = (fromCurrency, userCurrencies) => {
 	return currencies[resultIndex];
 };
 
-export const sumRegexp = /^$|(^\d{1,8}(\.\d{0,2})?$)/;
+export const sumRegexp = /^$|(^\d{1,10}(\.\d{0,2})?$)/;
