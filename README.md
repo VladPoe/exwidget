@@ -2,7 +2,7 @@ App provides simulations of in-time currency exchange with a given user account.
 
 
 It uses Open Exchange API ([https://openexchangerates.org](https://openexchangerates.org)) 
-to get exchange rates once per 10 seconds.
+to get exchange rates once per 10 seconds. App works with following currencies: EUR, USD, GBP, JPY.
 
 Technology stack: React, Redux + several additional utility libraries (see package.json for detail).
 
