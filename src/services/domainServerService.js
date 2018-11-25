@@ -1,11 +1,10 @@
 import userData from './../constants/userData';
 
-const RESPONSE_EMULATION_TIME = 3000;
 
 const emulateServerRequest = (response) => () => {
   return new Promise((resolve, reject) => {
     // setTimeout(() => reject("No domain server access"), RESPONSE_EMULATION_TIME);  // for error emulation
-    setTimeout(() => resolve(response), RESPONSE_EMULATION_TIME);
+    setTimeout(() => resolve(response), 3000);
   });
 };
 
@@ -22,7 +21,7 @@ export const emulateAccountUpdateServerRequest = (newBalanceSnapshot) => {
       status: 500,
       message: 'Service temporary unavailable'
     };
-    setTimeout(() => resolve(RESPONSE_SUCCESS), RESPONSE_EMULATION_TIME);
-    // setTimeout(() => reject(RESPONSE_ERROR), RESPONSE_EMULATION_TIME)  // for error emulation
+    setTimeout(() => resolve(RESPONSE_SUCCESS), 1800);
+    // setTimeout(() => reject(RESPONSE_ERROR), 2400)  // for error emulation
   });
 };
