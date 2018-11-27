@@ -11,7 +11,7 @@ const mapDispatchToProps = {
 class ExchangeWidgetContainer extends Component {
   interval = null;
   state = {
-    updateInterval: 10000,
+    updateInterval: 30000,
   };
 
   componentDidMount() {
