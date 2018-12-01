@@ -4,19 +4,18 @@ import ExchangeWidget from './ExchangeWidget';
 import { updateRates } from './../../store/actions/thunks';
 
 
+const UPDATE_RATES_INTERVAL = 300000;
+
 const mapDispatchToProps = {
   updateRates
 };
 
 class ExchangeWidgetContainer extends Component {
   interval = null;
-  state = {
-    updateInterval: 30000,
-  };
 
   componentDidMount() {
     this.props.updateRates();
-    this.interval = setInterval(() => this.props.updateRates(), this.state.updateInterval);
+    this.interval = setInterval(() => this.props.updateRates(), UPDATE_RATES_INTERVAL);
   };
 
   componentWillUnmount() {

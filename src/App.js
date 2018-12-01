@@ -29,7 +29,8 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.props.initialUpload(this.initialUploadCallback);
+    this.props.initialUpload()
+      .then(() => this.initialUploadCallback());
   }
 
   initialUploadCallback = () => {
