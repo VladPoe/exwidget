@@ -13,6 +13,16 @@ export const formErrorMessage = (reason) => {
   return `We see that some error occurred because of the following reason:\n${reason}`;
 };
 
+const offPreloader = (dispatch) => {
+  dispatch(actions.managePreloader(false));
+  dispatch(actions.setPreloaderMessage(''));
+};
+
+const onPreloader = (dispatch, msg) => {
+  dispatch(actions.managePreloader(true));
+  dispatch(actions.setPreloaderMessage(msg));
+};
+
 const manageCatch = (dispatch, err, errMessage) => {
   console.error(err);
   dispatch(actions.setCrucialError(errMessage));
@@ -23,15 +33,18 @@ const manageCatch = (dispatch, err, errMessage) => {
 
 export const initialUpload = () => {
   return (dispatch) => {
+    onPreloader(dispatch, 'Loding your data...');
     return Promise.all([fetchUserData(), openExchangeService.getBasicRates()])
       .then(([ userData, { base, rates, timestamp } ]) => {
         dispatch(actions.setUserData(userData));
         dispatch(actions.setRates({ base, rates, timestamp }));
         dispatch(actions.setExchangeFromCurrency(userData.mainCurrency));
         dispatch(actions.setExchangeToCurrency(getToCurrency(userData.mainCurrency, userData.account)));
+        offPreloader(dispatch);
       })
       .catch(err => {
         const msg = formErrorMessage(`"${err}"`);
+        offPreloader(dispatch);
         manageCatch(dispatch, err, msg);
       });
   }
@@ -67,18 +80,13 @@ export const updateBalance = () => {
       toCurrency,
       convertGivenSumFromTo(sum)(rates[toCurrency])(rates[fromCurrency]).toFixed(4)
     );
-    const offPreloader = () => {
-      dispatch(actions.manageScreenBlocking(false));
-      dispatch(actions.setPreloaderMessage(''));
-    };
-    dispatch(actions.manageScreenBlocking(true));
-    dispatch(actions.setPreloaderMessage('Updating you account'));
+    onPreloader(dispatch, 'Updating your account...');
     emulateAccountUpdateServerRequest(newBalance)
       .then(response => {
         if (response.status === 200) {
           dispatch(actions.updateUserBalance(response.balance));
           dispatch(actions.setExchangeSum(''));
-          offPreloader();
+          offPreloader(dispatch);
         } else {
           throw Error(response.message);
         }
@@ -86,7 +94,7 @@ export const updateBalance = () => {
       .catch(err => {
         const msg = formErrorMessage(err.message);
         manageCatch(dispatch, err, msg);
-        offPreloader();
+        offPreloader(dispatch);
       })
   };
 };

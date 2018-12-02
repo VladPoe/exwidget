@@ -6,14 +6,6 @@ import { withRouter } from 'react-router';
 import { getAppWorkStatus, getAppErrorMessage } from './selectors';
 import Preloader from "./components/Preloader/Preloader";
 
-const disableBeforeAppPreloader = () => {
-  const preloader = document.getElementById('before-app-preloader');
-  preloader.classList.add('hidden'); // animate
-  setTimeout(() => {
-    preloader.remove();
-  }, 400); // delete from DOM
-};
-
 const mapStateToProps = (state) => ({
   doesAppWorks: getAppWorkStatus(state),
   errorMessage: getAppErrorMessage(state),
@@ -35,7 +27,6 @@ class App extends Component {
 
   initialUploadCallback = () => {
     this.setState(() => ({ isPending: false }));
-    disableBeforeAppPreloader();
   };
 
   render() {
