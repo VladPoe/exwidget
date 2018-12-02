@@ -15,6 +15,7 @@ class ExchangeWidgetContainer extends Component {
 
   componentDidMount() {
     this.props.updateRates();
+
     this.interval = setInterval(() => this.props.updateRates(), UPDATE_RATES_INTERVAL);
   };
 

@@ -13,14 +13,14 @@ export const formErrorMessage = (reason) => {
   return `We see that some error occurred because of the following reason:\n${reason}`;
 };
 
-const offPreloader = (dispatch) => {
-  dispatch(actions.managePreloader(false));
-  dispatch(actions.setPreloaderMessage(''));
-};
-
 const onPreloader = (dispatch, msg) => {
   dispatch(actions.managePreloader(true));
   dispatch(actions.setPreloaderMessage(msg));
+};
+
+const offPreloader = (dispatch) => {
+  dispatch(actions.managePreloader(false));
+  dispatch(actions.setPreloaderMessage(''));
 };
 
 const manageCatch = (dispatch, err, errMessage) => {
@@ -51,10 +51,10 @@ export const initialUpload = () => {
 };
 
 export const updateRates = () => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
     openExchangeService.getBasicRates()
       .then(({ base, rates, timestamp }) => {
-        const prevRates = store.getState().rates;
+        const prevRates = getState().rates;
         const newRates = { base, rates, timestamp };
         if (areDeeplyEqual(prevRates, newRates)) return;
         dispatch(actions.setRates(newRates));
