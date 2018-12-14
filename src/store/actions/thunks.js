@@ -1,12 +1,11 @@
 import actions from './index.js'
 import { fetchUserData } from '../../services/domainServerService';
 import openExchangeService from './../../services/openExchangeService';
-import { store } from './../index';
-import areDeeplyEqual from './../../utils/areDeeplyEqual';
 import { getToCurrency } from './../../utils/currencies';
 import { emulateAccountUpdateServerRequest } from './../../services/domainServerService';
 import { countNewBalance } from './../../utils/countNewBalance';
-import {convertGivenSumFromTo} from "../../utils/conversion";
+import { convertGivenSumFromTo } from "../../utils/conversion";
+import { isEqual } from 'lodash';
 
 
 export const formErrorMessage = (reason) => {
@@ -52,16 +51,16 @@ export const initialUpload = () => {
 
 export const updateRates = () => {
   return (dispatch, getState) => {
-    openExchangeService.getBasicRates()
+    return openExchangeService.getBasicRates()
       .then(({ base, rates, timestamp }) => {
         const prevRates = getState().rates;
         const newRates = { base, rates, timestamp };
-        if (areDeeplyEqual(prevRates, newRates)) return;
+        if (isEqual(prevRates, newRates)) return;
         dispatch(actions.setRates(newRates));
       })
       .catch(err => {
         const msg = formErrorMessage(`API response ${err}`);
-        manageCatch(dispatch, err, msg);
+        return Promise.reject(msg);
       });
   }
 };

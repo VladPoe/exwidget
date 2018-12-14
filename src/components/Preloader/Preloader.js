@@ -1,19 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import styles from './preloader.module.css';
-import { getScreenPreloadingStatus, getScreenPreloadingMessage } from './../../selectors';
-
-
-const mapStateToProps = (state) => {
-  return {
-    isActive: getScreenPreloadingStatus(state),
-    message: getScreenPreloadingMessage(state)
-  };
-};
 
 const Preloader = (props) => {
-  return props.isActive && (
+  return (
     <div className={styles.preloader}>
       <div className={styles.inner}>
         {
@@ -41,5 +31,5 @@ Preloader.defaultProps = {
   message: ''
 };
 
-export default connect(mapStateToProps)(Preloader);
+export default Preloader;
 

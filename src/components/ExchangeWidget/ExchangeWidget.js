@@ -7,6 +7,7 @@ import ExchangeNavigationPropsProxy from './../../HOC/ExchangeNavigationPropsPro
 import ExchangeResult from './ExchangeResult';
 import Navigation from './../Navigation';
 import ExchangeBtn from './ExchangeBtn';
+import WithExchangeRatesSubscription from './../../HOC/WithExchangeRatesSubscription';
 
 const FromCurrencyState = CurrencyStatePropsProxy(CurrencyState, 'from');
 const ToCurrencyState = CurrencyStatePropsProxy(CurrencyState, 'to');
@@ -50,4 +51,4 @@ const ExchangeWidget = () => {
   );
 };
 
-export default ExchangeWidget;
+export default WithExchangeRatesSubscription(ExchangeWidget);

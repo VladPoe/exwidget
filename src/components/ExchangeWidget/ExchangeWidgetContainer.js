@@ -2,25 +2,22 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ExchangeWidget from './ExchangeWidget';
 import { updateRates } from './../../store/actions/thunks';
+import { RatesRequestInterval } from './../../store/actions/thunks';
 
-
-const UPDATE_RATES_INTERVAL = 300000;
 
 const mapDispatchToProps = {
   updateRates
 };
 
 class ExchangeWidgetContainer extends Component {
-  interval = null;
+  interval = new RatesRequestInterval();
 
   componentDidMount() {
-    this.props.updateRates();
-
-    this.interval = setInterval(() => this.props.updateRates(), UPDATE_RATES_INTERVAL);
+    this.interval.requestRecursively()
   };
 
   componentWillUnmount() {
-    clearInterval(this.interval);
+    this.interval.cancel();
   }
 
   render() {

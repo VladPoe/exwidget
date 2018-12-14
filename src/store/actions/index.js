@@ -1,6 +1,6 @@
 import { createAction } from 'redux-actions';
 
-const setCrucialError = createAction('SET_CRUCIAL_ERROR');
+export const setCrucialError = createAction('SET_CRUCIAL_ERROR');
 const setUserData = createAction('SET_USER_DATA');
 const setRates = createAction('SET_RATES');
 const setUserCurrency = createAction('SET_USER_CURRENCY');

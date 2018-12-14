@@ -1,14 +1,17 @@
 import { createSelector } from 'reselect';
 import { decimal, isLessOrEqual } from './../utils/decimal';
+import { get } from 'lodash';
 
-export const getAppWorkStatus = (state) => state.appStatus.works;
-export const getAppErrorMessage = (state) => state.appStatus.errorMessage;
+export const getAppWorkStatus = (state) => get(state.appStatus, 'works');
+export const getAppErrorMessage = (state) => get(state.appStatus, 'errorMessage');
 
-export const getFromCurrency = (state) => state.exchange.fromCurrency;
-export const getToCurrency = (state) => state.exchange.toCurrency;
-export const getUserBalance = (state) => state.user.account;
-export const getExchangeState = (state) => state.exchange;
-export const getExchangeSum = (state) => state.exchange.sum;
+export const isExchangeDataReady = (state) => !!get(state, 'rates');
+
+export const getFromCurrency = (state) => get(state.exchange, 'fromCurrency');
+export const getToCurrency = (state) => get(state.exchange, 'toCurrency');
+export const getUserBalance = (state) => get(state.user, 'account');
+export const getExchangeState = (state) => get(state, 'exchange');
+export const getExchangeSum = (state) => get(state.exchange, 'sum');
 export const getMaxSumAvailable = (state) => {
   return state.user.account[state.exchange.fromCurrency].amount;
 };
@@ -18,6 +21,6 @@ export const getExchangeSumAvailability = createSelector(
     return isLessOrEqual(decimal(exchangeSum || 0))(max)
   }
 );
-export const getRates = (state) => state.rates.rates;
-export const getScreenPreloadingStatus = (state) => state.ui.preloaderBlock.isActive;
-export const getScreenPreloadingMessage = (state) => state.ui.preloaderBlock.message;
+export const getRates = (state) => get(state.rates, 'rates');
+export const getScreenPreloadingStatus = (state) => get(state.ui.preloaderBlock, 'isActive');
+export const getScreenPreloadingMessage = (state) => get(state.ui.preloaderBlock, 'message');

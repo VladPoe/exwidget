@@ -1,28 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { initialUpload } from './store/actions/thunks';
-import RootRouter from './routes/RooRouter';
+import RootRouter from './routes/RootRouter';
 import { withRouter } from 'react-router';
-import { getAppWorkStatus, getAppErrorMessage } from './selectors';
-import Preloader from "./components/Preloader/Preloader";
-
-const mapStateToProps = (state) => ({
-  doesAppWorks: getAppWorkStatus(state),
-  errorMessage: getAppErrorMessage(state),
-});
-
-const mapDispatchToProps = {
-  initialUpload
-};
+import GlobalPreloader from "./components/GlobalPreloader/GlobalPreloader";
 
 class App extends Component {
-  state = {
-    isPending: true
-  };
+  // state = {
+  //   isPending: true
+  // };
 
   componentDidMount() {
-    this.props.initialUpload()
-      .then(() => this.initialUploadCallback());
+    // this.props.initialUpload()
+    //   .then(() => this.initialUploadCallback());
   }
 
   initialUploadCallback = () => {
@@ -32,13 +22,11 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        {
-          !this.state.isPending && <RootRouter {...this.props} />
-        }
-        <Preloader />
+        <RootRouter {...this.props} />
+        <GlobalPreloader />
       </div>
     );
   }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default withRouter(App);
