@@ -24,12 +24,12 @@ self.__precacheManifest = [
     "url": "/exwidget/static/media/astronaut.8aa75ecb.svg"
   },
   {
-    "revision": "4fa444221635632b733c714f3550e4cc",
-    "url": "/exwidget/static/media/FuturaBook.4fa44422.woff2"
-  },
-  {
     "revision": "1d75ea1dfdcb40adbab57a561b970679",
     "url": "/exwidget/static/media/FuturaBook.1d75ea1d.woff"
+  },
+  {
+    "revision": "4fa444221635632b733c714f3550e4cc",
+    "url": "/exwidget/static/media/FuturaBook.4fa44422.woff2"
   },
   {
     "revision": "38e1ed9a9ee49d755d20226b0d66588c",
@@ -48,7 +48,7 @@ self.__precacheManifest = [
     "url": "/exwidget/static/media/Roboto.58bf8e0b.woff"
   },
   {
-    "revision": "f1e132a79d3c1f44d31850586441d7fa",
+    "revision": "1873b5b154a3b37d5261e988e1b4f98f",
     "url": "/exwidget/index.html"
   }
 ];
