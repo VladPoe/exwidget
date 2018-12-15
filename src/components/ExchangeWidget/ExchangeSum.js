@@ -46,7 +46,7 @@ class ExchangeSum extends Component {
     const labelText = !this.props.exchangeSum
       ? 'type the sum'
       : !this.props.isAvailable
-        ? 'overbalance' : '';
+        ? 'overbalanced' : '';
 
     return (
       <div className={`${sharedStyles.sumInputWrap} ${sharedStyles.heading}`}

@@ -5,7 +5,9 @@ import { get } from 'lodash';
 export const getAppWorkStatus = (state) => get(state.appStatus, 'works');
 export const getAppErrorMessage = (state) => get(state.appStatus, 'errorMessage');
 
-export const isExchangeDataReady = (state) => !!get(state, 'rates');
+export const isExchangeDataReady = (state) => !!(
+  get(state, 'rates') && get(state, 'user')
+);
 
 export const getFromCurrency = (state) => get(state.exchange, 'fromCurrency');
 export const getToCurrency = (state) => get(state.exchange, 'toCurrency');

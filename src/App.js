@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { initialUpload } from './store/actions/thunks';
+import { getUserData } from './store/actions/thunks';
 import RootRouter from './routes/RootRouter';
 import { withRouter } from 'react-router';
 import GlobalPreloader from "./components/GlobalPreloader/GlobalPreloader";
 
+const mapDispatchToProps = {
+  getUserData
+};
+
 class App extends Component {
-  // state = {
-  //   isPending: true
-  // };
 
   componentDidMount() {
-    // this.props.initialUpload()
-    //   .then(() => this.initialUploadCallback());
+    this.props.getUserData();
   }
 
   initialUploadCallback = () => {
@@ -29,4 +29,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(App);
+export default withRouter(connect(null, mapDispatchToProps)(App));

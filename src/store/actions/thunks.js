@@ -49,6 +49,21 @@ export const initialUpload = () => {
   }
 };
 
+export const getUserData = () => {
+  return (dispatch) => {
+    fetchUserData()
+      .then(userData => {
+        dispatch(actions.setExchangeFromCurrency(userData.mainCurrency));
+        dispatch(actions.setExchangeToCurrency(getToCurrency(userData.mainCurrency, userData.account)));
+        dispatch(actions.setUserData(userData));
+      })
+      .catch(err => {
+        const msg = formErrorMessage(`"${err}"`);
+        manageCatch(dispatch, err, msg);
+      });
+  };
+};
+
 export const updateRates = () => {
   return (dispatch, getState) => {
     return openExchangeService.getBasicRates()

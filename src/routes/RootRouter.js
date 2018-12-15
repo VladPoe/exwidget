@@ -4,7 +4,7 @@ import { PropTypes } from 'prop-types';
 import { Switch, Route } from 'react-router';
 import ErrorScreen from './../components/ErrorScreen/ErrorScreen.js';
 import ROUTES from './../constants/routes';
-import ExchangeWidget from './../components/ExchangeWidget/ExchangeWidget';
+import ExchangeWidgetContainer from './../components/ExchangeWidget/ExchangeWidgetContainer';
 import { getAppWorkStatus, getAppErrorMessage } from './../selectors';
 
 
@@ -33,7 +33,6 @@ const mapStateToProps = (state) => {
 };
 
 const RootRouter = (props) => {
-  console.log(props);
   return (
     props.hasError
       ? <Route render={ () => <ErrorScreen message={props.errorMessage}
@@ -42,7 +41,7 @@ const RootRouter = (props) => {
       } />
       : (
         <Switch>
-          <Route path={ROUTES.INDEX} exact render={ () => <ExchangeWidget /> } />
+          <Route path={ROUTES.INDEX} exact render={ () => <ExchangeWidgetContainer /> } />
           <Route render={ () =>
             <NotFoundPage buttonClickHandler={redirectHome(props.history) } />
           } />

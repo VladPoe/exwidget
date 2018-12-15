@@ -7,8 +7,6 @@ export const requestRecursively = (
   retryInterval = 2000
 ) => {
   return function recursive(tryCounter) {
-    console.log(tryCounter);
-    console.log(instanceReference);
     return actionThunk()
       .then(() => {
         instanceReference.id = setTimeout(() => recursive(1), interval);

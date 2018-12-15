@@ -1,30 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import ExchangeWidget from './ExchangeWidget';
-import { updateRates } from './../../store/actions/thunks';
-import { RatesRequestInterval } from './../../store/actions/thunks';
+import WithExchangeRatesSubscription from './../../HOC/WithExchangeRatesSubscription';
+import Preloader from './../Preloader/Preloader';
+import { isExchangeDataReady } from "./../../selectors";
 
 
-const mapDispatchToProps = {
-  updateRates
+const mapStateToProps = (state) => {
+  return {
+    isDataReady: isExchangeDataReady(state)
+  }
 };
 
-class ExchangeWidgetContainer extends Component {
-  interval = new RatesRequestInterval();
+const ExchangeWidgetContainer = (props) => {
+  return props.isDataReady
+    ? <ExchangeWidget />
+    : <Preloader />
+};
 
-  componentDidMount() {
-    this.interval.requestRecursively()
-  };
-
-  componentWillUnmount() {
-    this.interval.cancel();
-  }
-
-  render() {
-    return (
-      <ExchangeWidget />
-    );
-  }
-}
-
-export default connect(null, mapDispatchToProps)(ExchangeWidgetContainer);
+export default WithExchangeRatesSubscription(connect(mapStateToProps)(ExchangeWidgetContainer));
