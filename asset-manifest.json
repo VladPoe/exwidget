@@ -1,9 +1,9 @@
 {
   "main.css": "/exwidget/static/css/main.f0432baf.chunk.css",
-  "main.js": "/exwidget/static/js/main.2a5ba6da.chunk.js",
-  "main.js.map": "/exwidget/static/js/main.2a5ba6da.chunk.js.map",
-  "static/js/1.574bebf4.chunk.js": "/exwidget/static/js/1.574bebf4.chunk.js",
-  "static/js/1.574bebf4.chunk.js.map": "/exwidget/static/js/1.574bebf4.chunk.js.map",
+  "main.js": "/exwidget/static/js/main.82405807.chunk.js",
+  "main.js.map": "/exwidget/static/js/main.82405807.chunk.js.map",
+  "static/js/1.28adda58.chunk.js": "/exwidget/static/js/1.28adda58.chunk.js",
+  "static/js/1.28adda58.chunk.js.map": "/exwidget/static/js/1.28adda58.chunk.js.map",
   "runtime~main.js": "/exwidget/static/js/runtime~main.dadc9eb1.js",
   "runtime~main.js.map": "/exwidget/static/js/runtime~main.dadc9eb1.js.map",
   "static/media/exchangeWidget.module.css": "/exwidget/static/media/subtlePrism.7c11c587.svg",
@@ -11,6 +11,6 @@
   "static/media/index.css": "/exwidget/static/media/Roboto.58bf8e0b.woff",
   "static/css/main.f0432baf.chunk.css.map": "/exwidget/static/css/main.f0432baf.chunk.css.map",
   "index.html": "/exwidget/index.html",
-  "precache-manifest.f8d848a9d6013933600b52acdb154580.js": "/exwidget/precache-manifest.f8d848a9d6013933600b52acdb154580.js",
+  "precache-manifest.704ce32ed89e47c6f0fc260760d250c4.js": "/exwidget/precache-manifest.704ce32ed89e47c6f0fc260760d250c4.js",
   "service-worker.js": "/exwidget/service-worker.js"
 }

@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "2a5ba6da1989d5cb6f77",
+    "revision": "824058072e7ff11b4c1f",
     "url": "/exwidget/static/css/main.f0432baf.chunk.css"
   },
   {
-    "revision": "2a5ba6da1989d5cb6f77",
-    "url": "/exwidget/static/js/main.2a5ba6da.chunk.js"
+    "revision": "824058072e7ff11b4c1f",
+    "url": "/exwidget/static/js/main.82405807.chunk.js"
   },
   {
-    "revision": "574bebf486b4a2adc328",
-    "url": "/exwidget/static/js/1.574bebf4.chunk.js"
+    "revision": "28adda58cd4650a99a7a",
+    "url": "/exwidget/static/js/1.28adda58.chunk.js"
   },
   {
     "revision": "dadc9eb1267dfe502f4f",
@@ -24,31 +24,31 @@ self.__precacheManifest = [
     "url": "/exwidget/static/media/astronaut.8aa75ecb.svg"
   },
   {
-    "revision": "4fa444221635632b733c714f3550e4cc",
-    "url": "/exwidget/static/media/FuturaBook.4fa44422.woff2"
-  },
-  {
     "revision": "1d75ea1dfdcb40adbab57a561b970679",
     "url": "/exwidget/static/media/FuturaBook.1d75ea1d.woff"
+  },
+  {
+    "revision": "4fa444221635632b733c714f3550e4cc",
+    "url": "/exwidget/static/media/FuturaBook.4fa44422.woff2"
   },
   {
     "revision": "38e1ed9a9ee49d755d20226b0d66588c",
     "url": "/exwidget/static/media/Robotolight.38e1ed9a.woff2"
   },
   {
-    "revision": "69eee0b43d46be3ad91ef75a76ea3959",
-    "url": "/exwidget/static/media/Roboto.69eee0b4.woff2"
-  },
-  {
     "revision": "611ac98371c2d77c377041e1a0fd87dc",
     "url": "/exwidget/static/media/Robotolight.611ac983.woff"
+  },
+  {
+    "revision": "69eee0b43d46be3ad91ef75a76ea3959",
+    "url": "/exwidget/static/media/Roboto.69eee0b4.woff2"
   },
   {
     "revision": "58bf8e0bd1dd213bf745e9d748caf175",
     "url": "/exwidget/static/media/Roboto.58bf8e0b.woff"
   },
   {
-    "revision": "8ea2ac21c4956b8c21d9c2440b784677",
+    "revision": "32b1d4bd7009175a71b484e7ed59b432",
     "url": "/exwidget/index.html"
   }
 ];
