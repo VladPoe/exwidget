@@ -19,7 +19,7 @@ const getBasicRates = () => {
     'symbols': Object.values(currencies).map(({ code }) => code).join(',')
   };
   const url = withQueryParams(createUrl)(endpoint)(params);
-  console.log(url);
+  console.log('url requested = ', url);
   return getOExData(url);
 };
 

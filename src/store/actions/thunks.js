@@ -30,25 +30,6 @@ const manageCatch = (dispatch, err, errMessage) => {
 // -----> FYI <-----
 // to trigger error uncomment line 6 in ../services/domainServerService.js
 
-export const initialUpload = () => {
-  return (dispatch) => {
-    onPreloader(dispatch, 'Loding your data...');
-    return Promise.all([fetchUserData(), openExchangeService.getBasicRates()])
-      .then(([ userData, { base, rates, timestamp } ]) => {
-        dispatch(actions.setUserData(userData));
-        dispatch(actions.setRates({ base, rates, timestamp }));
-        dispatch(actions.setExchangeFromCurrency(userData.mainCurrency));
-        dispatch(actions.setExchangeToCurrency(getToCurrency(userData.mainCurrency, userData.account)));
-        offPreloader(dispatch);
-      })
-      .catch(err => {
-        const msg = formErrorMessage(`"${err}"`);
-        offPreloader(dispatch);
-        manageCatch(dispatch, err, msg);
-      });
-  }
-};
-
 export const getUserData = () => {
   return (dispatch) => {
     fetchUserData()
