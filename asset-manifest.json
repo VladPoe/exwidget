@@ -1,7 +1,7 @@
 {
-  "main.css": "/exwidget/static/css/main.f0432baf.chunk.css",
-  "main.js": "/exwidget/static/js/main.82405807.chunk.js",
-  "main.js.map": "/exwidget/static/js/main.82405807.chunk.js.map",
+  "main.css": "/exwidget/static/css/main.ab073559.chunk.css",
+  "main.js": "/exwidget/static/js/main.54caf7e4.chunk.js",
+  "main.js.map": "/exwidget/static/js/main.54caf7e4.chunk.js.map",
   "static/js/1.28adda58.chunk.js": "/exwidget/static/js/1.28adda58.chunk.js",
   "static/js/1.28adda58.chunk.js.map": "/exwidget/static/js/1.28adda58.chunk.js.map",
   "runtime~main.js": "/exwidget/static/js/runtime~main.dadc9eb1.js",
@@ -9,8 +9,8 @@
   "static/media/exchangeWidget.module.css": "/exwidget/static/media/subtlePrism.7c11c587.svg",
   "static/media/astronaut.svg": "/exwidget/static/media/astronaut.8aa75ecb.svg",
   "static/media/index.css": "/exwidget/static/media/Roboto.58bf8e0b.woff",
-  "static/css/main.f0432baf.chunk.css.map": "/exwidget/static/css/main.f0432baf.chunk.css.map",
+  "static/css/main.ab073559.chunk.css.map": "/exwidget/static/css/main.ab073559.chunk.css.map",
   "index.html": "/exwidget/index.html",
-  "precache-manifest.704ce32ed89e47c6f0fc260760d250c4.js": "/exwidget/precache-manifest.704ce32ed89e47c6f0fc260760d250c4.js",
+  "precache-manifest.af7e61f4a52522c5f9885995413d8740.js": "/exwidget/precache-manifest.af7e61f4a52522c5f9885995413d8740.js",
   "service-worker.js": "/exwidget/service-worker.js"
 }
