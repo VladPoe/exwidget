@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateRates } from "../store/actions/thunks";
 import { setCrucialError } from './../store/actions';
-import { requestRecursively, abortSubscription } from "./../utils/RatesRequestInterval";
+import { requestRecursively, abortSubscription } from "../utils/ratesRequestInterval";
 
 
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import sharedStyles from './exchangeWidget.module.css';
@@ -8,12 +8,12 @@ import { convertGivenSumFromTo } from './../../utils/conversion';
 import cn from 'classnames';
 
 const getRatesHtml = (fromCurr, toCurr, rate) => {
-  return [
-    <span className={sharedStyles.small}>{currencies[fromCurr].symbol}</span>,
-    `1 = `,
-    <span className={sharedStyles.small}>{currencies[toCurr].symbol}</span>,
-    `${rate}`
-  ];
+  return (
+    <Fragment>
+      <span className={sharedStyles.small}>{currencies[fromCurr].symbol}</span>1 =
+      <span className={sharedStyles.small}>{currencies[toCurr].symbol}</span>{rate}
+    </Fragment>
+  );
 };
 
 const mapStateToProps = (state) => {

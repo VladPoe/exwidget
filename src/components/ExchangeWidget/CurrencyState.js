@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import sharedStyles from './../ExchangeWidget/exchangeWidget.module.css';
 import currencies from './../../constants/currencies';
 
 const getBalanceHtml = (currCode, balance) => {
   const symbol = currencies[currCode].symbol;
-  return [
-    `You have `,
-    <span className={sharedStyles.small}>{symbol}</span>,
-    `${balance}`
-  ];
+  return (
+    <Fragment>
+      You have <span className={sharedStyles.small}>{symbol}</span>{balance}
+    </Fragment>
+  );
 };
 
 const CurrencyState = (props) => {

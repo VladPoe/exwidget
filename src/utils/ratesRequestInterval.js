@@ -3,7 +3,7 @@ export const requestRecursively = (
   actionThunk,
   errorHandler,
   maxTry = 3,
-  interval = 20000,
+  interval = 25000,
   retryInterval = 2000
 ) => {
   return function recursive(tryCounter) {
