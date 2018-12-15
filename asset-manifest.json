@@ -1,16 +1,16 @@
 {
-  "main.css": "/exwidget/static/css/main.f540ac2f.chunk.css",
-  "main.js": "/exwidget/static/js/main.4dc23aae.chunk.js",
-  "main.js.map": "/exwidget/static/js/main.4dc23aae.chunk.js.map",
-  "static/js/1.4afb42dd.chunk.js": "/exwidget/static/js/1.4afb42dd.chunk.js",
-  "static/js/1.4afb42dd.chunk.js.map": "/exwidget/static/js/1.4afb42dd.chunk.js.map",
+  "main.css": "/exwidget/static/css/main.f0432baf.chunk.css",
+  "main.js": "/exwidget/static/js/main.efc151b5.chunk.js",
+  "main.js.map": "/exwidget/static/js/main.efc151b5.chunk.js.map",
+  "static/js/1.574bebf4.chunk.js": "/exwidget/static/js/1.574bebf4.chunk.js",
+  "static/js/1.574bebf4.chunk.js.map": "/exwidget/static/js/1.574bebf4.chunk.js.map",
   "runtime~main.js": "/exwidget/static/js/runtime~main.dadc9eb1.js",
   "runtime~main.js.map": "/exwidget/static/js/runtime~main.dadc9eb1.js.map",
   "static/media/exchangeWidget.module.css": "/exwidget/static/media/subtlePrism.7c11c587.svg",
   "static/media/astronaut.svg": "/exwidget/static/media/astronaut.8aa75ecb.svg",
   "static/media/index.css": "/exwidget/static/media/Roboto.58bf8e0b.woff",
-  "static/css/main.f540ac2f.chunk.css.map": "/exwidget/static/css/main.f540ac2f.chunk.css.map",
+  "static/css/main.f0432baf.chunk.css.map": "/exwidget/static/css/main.f0432baf.chunk.css.map",
   "index.html": "/exwidget/index.html",
-  "precache-manifest.1cd4fd21c30a95fac8ae19a454f1b2c6.js": "/exwidget/precache-manifest.1cd4fd21c30a95fac8ae19a454f1b2c6.js",
+  "precache-manifest.c8942dbfcc02465aa0cf335ca585b6cb.js": "/exwidget/precache-manifest.c8942dbfcc02465aa0cf335ca585b6cb.js",
   "service-worker.js": "/exwidget/service-worker.js"
 }
