@@ -57,11 +57,11 @@ export const updateRates = () => {
         const newRates = { base, rates, timestamp };
         if (isEqual(prevRates, newRates)) return;
         dispatch(actions.setRates(newRates));
-      })
-      .catch(err => {
-        const msg = formErrorMessage(`API response ${err}`);
-        return Promise.reject(msg);
-      });
+      },
+				err => {
+					const msg = formErrorMessage(`API response ${err}`);
+					return Promise.reject(msg);
+				});
   }
 };
 

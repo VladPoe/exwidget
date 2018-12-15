@@ -3,7 +3,7 @@ export const requestRecursively = (
   actionThunk,
   errorHandler,
   maxTry = 3,
-  interval = 30000,
+  interval = 20000,
   retryInterval = 2000
 ) => {
   return function recursive(tryCounter) {
@@ -15,7 +15,7 @@ export const requestRecursively = (
       })
       .catch(err => {
         if (tryCounter > maxTry) {
-          clearInterval(instanceReference.id);
+          clearTimeout(instanceReference.id);
           errorHandler(err);
           return;
         }
@@ -24,4 +24,4 @@ export const requestRecursively = (
   }
 };
 
-export const abortSubscription = (instanceReference) => clearInterval(instanceReference);
+export const abortSubscription = (instanceReference) => clearTimeout(instanceReference);

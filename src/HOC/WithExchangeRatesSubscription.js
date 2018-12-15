@@ -4,7 +4,6 @@ import { updateRates } from "../store/actions/thunks";
 import { setCrucialError } from './../store/actions';
 import { isExchangeDataReady } from './../selectors';
 import Preloader from './../components/Preloader/Preloader';
-import RatesRequestInterval from './../utils/RatesRequestInterval';
 import { requestRecursively, abortSubscription } from "./../utils/RatesRequestInterval";
 
 
