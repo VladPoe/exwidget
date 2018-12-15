@@ -17,7 +17,7 @@ export const emulateAccountUpdateServerRequest = (newBalanceSnapshot) => {
       message: 'Yor balance successfully updated',
       balance: { ...newBalanceSnapshot }
     };
-    const ERROR_RESPONSE = {
+    const ERROR_RESPONSE = { // eslint-disable-line no-unused-vars
       status: 500,
       message: 'Service is temporary unavailable'
     };
