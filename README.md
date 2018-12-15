@@ -1,12 +1,12 @@
-App provides simulations of in-time currency exchange with a given user account.
+App provides simulation of in-time currency exchange with a given user account.
 
 
-It uses Open Exchange API ([https://openexchangerates.org](https://openexchangerates.org)) 
-to get exchange rates once per 10 seconds. App works with following currencies: EUR, USD, GBP, JPY.
+It uses Open Exchange Rates API ([https://openexchangerates.org](https://openexchangerates.org)) 
+to get exchange rates once per given timer. App works with following currencies: EUR, USD, GBP, JPY.
 
-Technology stack: React, Redux + several additional utility libraries (see package.json for detail).
+Technology stack: React, Redux + several additional utility libraries (see package.json for details).
 
-Project uses css variables so please be sure you use a modern browser ([https://caniuse.com/#search=css%20variables](https://caniuse.com/#search=css%20variables))
+Project uses css variables so please be sure you use a modern browser ([https://caniuse.com/#search=css%20variables](https://caniuse.com/#search=css%20variables)).
 
 App handles some error cases. To check them out please see '../services/domainServerService.js' or '../store/actions/thunks.js' instructions.
 
