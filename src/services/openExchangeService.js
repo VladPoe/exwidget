@@ -26,8 +26,8 @@ const getBasicRates = () => {
 const getBasicRatesWithError = () => {
   const endpoint = ENDPOINTS.LATEST;
   const params = {
-    'base': userData.baseSymbol,
-    'symbols': `${currencies.EUR.code},${currencies.USD.code},${currencies.GBP.code}`
+    'base': userData.mainCurrency,
+    'symbols': Object.values(currencies).map(({ code }) => code).join(',')
   };
   const url = withQueryParams(createUrlWrongKey)(endpoint)(params);
   console.log('url requested = ', url);

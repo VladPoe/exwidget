@@ -30,7 +30,7 @@
 .spinner .path {
   stroke: rgb(65, 142, 228);
   stroke-linecap: round;
-  animation: dash 1600ms ease-in-out infinite;
+  animation: dash 1300ms ease-in-out infinite;
 }
 
 
