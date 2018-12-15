@@ -4,7 +4,7 @@ import userData from './../constants/userData';
 const emulateServerRequest = (response) => () => {
   return new Promise((resolve, reject) => {
     // setTimeout(() => reject('No access'), 2800);  // for error emulation
-    setTimeout(() => resolve(response), 2800);
+    setTimeout(() => resolve(response), 1800);
   });
 };
 
@@ -22,6 +22,6 @@ export const emulateAccountUpdateServerRequest = (newBalanceSnapshot) => {
       message: 'Service is temporary unavailable'
     };
     // setTimeout(() => reject(ERROR_RESPONSE), 2400)  // for error emulation
-    setTimeout(() => resolve(SUCCESS_RESPONSE), 1800);
+    setTimeout(() => resolve(SUCCESS_RESPONSE), 1200);
   });
 };

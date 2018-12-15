@@ -8,12 +8,12 @@ import { convertGivenSumFromTo } from './../../utils/conversion';
 import cn from 'classnames';
 
 const getRatesHtml = (fromCurr, toCurr, rate) => {
-  return {
-    __html: `<span class="${sharedStyles.small}">${currencies[fromCurr].symbol}</span>`
-      + `1 = `
-      + `<span class="${sharedStyles.small}">${currencies[toCurr].symbol}</span>`
-      + `${rate}`
-  };
+  return [
+    <span className={sharedStyles.small}>{currencies[fromCurr].symbol}</span>,
+    `1 = `,
+    <span className={sharedStyles.small}>{currencies[toCurr].symbol}</span>,
+    `${rate}`
+  ];
 };
 
 const mapStateToProps = (state) => {
@@ -41,9 +41,9 @@ const ExchangeResult = (props) => {
   return (
     <div className={sharedStyles.exchangeResult}>
       <span className={headingClasses}><span className={sharedStyles.sign}>+ </span>{ sum }</span>
-      <small className={sharedStyles.label}
-             dangerouslySetInnerHTML={getRatesHtml(fromCurrency, toCurrency, rateForUnit)}
-      />
+      <small className={sharedStyles.label}>
+        { getRatesHtml(fromCurrency, toCurrency, rateForUnit) }
+      </small>
     </div>
   );
 };
