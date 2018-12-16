@@ -75,7 +75,7 @@ export const updateBalance = () => {
       toCurrency,
       convertGivenSumFromTo(sum)(rates[toCurrency])(rates[fromCurrency]).toFixed(4)
     );
-    onPreloader(dispatch, 'Updating your account...');
+    onPreloader(dispatch, 'Updating your balance...');
     emulateAccountUpdateServerRequest(newBalance)
       .then(response => {
         if (response.status === 200) {

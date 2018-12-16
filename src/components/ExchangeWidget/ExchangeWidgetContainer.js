@@ -15,7 +15,7 @@ const mapStateToProps = (state) => {
 const ExchangeWidgetContainer = (props) => {
   return props.isDataReady
     ? <ExchangeWidget />
-    : <Preloader />
+    : <Preloader message="Loading you data..." />
 };
 
 export default WithExchangeRatesSubscription(connect(mapStateToProps)(ExchangeWidgetContainer));

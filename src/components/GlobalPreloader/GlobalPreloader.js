@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 };
 
 const GlobalPreloader = (props) => {
-  return props.isActive && <Preloader />
+  return props.isActive && <Preloader message={props.message}/>
 };
 
 export default connect(mapStateToProps)(GlobalPreloader);

@@ -22,12 +22,10 @@ const Preloader = (props) => {
 };
 
 Preloader.propTypes = {
-  isActive: PropTypes.bool.isRequired,
   message: PropTypes.string
 };
 
 Preloader.defaultProps = {
-  isActive: false,
   message: ''
 };
 
