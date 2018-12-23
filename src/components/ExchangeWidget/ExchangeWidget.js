@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './exchangeWidget.module.css';
 import CurrencyState from './CurrencyState';
 import ExchangeSum from './ExchangeSum';
-import CurrencyStatePropsProxy from './../../HOC/CurrencyStatePropsPropxy';
+import CurrencyStatePropsProxy from './../../HOC/CurrencyStatePropsProxy';
 import ExchangeNavigationPropsProxy from './../../HOC/ExchangeNavigationPropsProxy';
 import ExchangeResult from './ExchangeResult';
 import Navigation from './../Navigation';

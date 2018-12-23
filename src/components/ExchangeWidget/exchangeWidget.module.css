@@ -5,9 +5,14 @@
   --bg-overlay-color: rgba(0, 0, 0, 0.3);
   background-color: var(--base-blue);
   color: var(--contrast-white);
-  background-image: url('./../../assets/icons/subtlePrism.svg');
-  background-blend-mode: soft-light;
-  background-size: cover;
+}
+
+@supports (background-blend-mode: soft-light) {
+  .exchangeWidget {
+    background-image: url('./../../assets/icons/subtlePrism.svg');
+    background-blend-mode: soft-light;
+    background-size: cover;
+  }
 }
 
 .wrap {
