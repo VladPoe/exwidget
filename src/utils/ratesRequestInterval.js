@@ -22,4 +22,4 @@ export const requestRecursively = (
   }
 };
 
-export const abortSubscription = (instanceReference) => clearTimeout(instanceReference);
+export const abortSubscription = (instanceReference) => clearTimeout(instanceReference.id);
