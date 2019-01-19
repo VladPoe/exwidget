@@ -3,7 +3,7 @@ import userData from './../constants/userData';
 import currencies from './../constants/currencies';
 
 export const OEX = {
-  KEY: '45df0613a845463591657cc7242dd4c0',
+  KEY: process.env.REACT_APP_API_KEY,
   FAKE_KEY: 'qwerty12345',
   BASE_URL: 'https://openexchangerates.org/api'
 };

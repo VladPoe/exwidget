@@ -5,7 +5,6 @@ import { setCrucialError } from './../store/actions';
 import { requestRecursively, abortSubscription } from "../utils/ratesRequestInterval";
 
 
-
 const mapDispatchToProps = {
   updateRates,
   setCrucialError
